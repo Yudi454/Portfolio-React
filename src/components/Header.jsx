@@ -1,8 +1,9 @@
 
-export const Header = () => {
+export const Header = ({nombre,apellido}) => {
+
     return (
         <>
-            <h1>Header</h1>
+            <h1>Portfolio de {nombre} {apellido}</h1>
         </>
     )
 }
