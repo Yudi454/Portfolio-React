@@ -3,13 +3,17 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 
 export const Main = () => {
 
-  const [cardYBoton1,setCardYBoton1] = useState();
+  const [cardYBoton1,setCardYBoton1] = useState(false);
 
-  const [cardYBoton2,setCardYBoton2] = useState();
+  const [card2,setCard2] = useState(false);
 
 
   const mostrarCardYBoton1 = () => {
+    setCardYBoton1(true)
+  }
 
+  const mostrarCard2 = () => {
+    setCard2(true)
   }
 
   return (
@@ -31,12 +35,12 @@ export const Main = () => {
         </Col>
         {/* Primer boton */}
         <Col lg={1}>
-          <div>
+          <div onClick={mostrarCardYBoton1}>
             <i className="bi bi-arrow-right-circle"></i>
           </div>
         </Col>
         {/* Segunda Card */}
-        <Col className="d-none" lg={4}>
+        <Col className={!cardYBoton1 ? "d-none" : ""} lg={4}>
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
@@ -50,11 +54,13 @@ export const Main = () => {
           </Card>
         </Col>
         {/* Segundo Boton */}
-        <Col className="d-none" lg={1}>
+        <Col lg={1}>
+        <div onClick={mostrarCard2} className={!cardYBoton1 ? "d-none" : ""} >
           <i className="bi bi-arrow-right-circle"></i>
+        </div>
         </Col>
         {/* Tercera Card */}
-        <Col className="d-none" lg={3}>
+        <Col className={!card2 ? "d-none" : ""} lg={3}>
           {" "}
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src="holder.js/100px180" />
