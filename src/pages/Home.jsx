@@ -7,18 +7,16 @@ export const Home = () => {
     const datos = {
         nombre: "Lucas",
         apellido: "Yudi",
-        edad: 0,
-        descripción: "",
+        edad: 21,
         imagen: "",
-        mascotas: [],
-        lenguajes: [],
+        lenguajesYTecnologias: ["JavaScript","Java","C#","React","Html","Css","Mongo","Node","Express"],
         redes: {}
     }
 
     return (
         <>
         <Header nombre={datos.nombre} apellido={datos.apellido}/>
-        <Main/>
+        <Main datos={datos} />
         <Footer/>
         </>
     )

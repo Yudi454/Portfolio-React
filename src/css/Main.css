@@ -1,0 +1,21 @@
+.card {
+    background-color:  blueviolet !important;
+}
+
+.Card2{
+    animation: aparecer 3s;
+}
+
+.Card3{
+    animation: aparecer 3s;
+}
+
+@keyframes aparecer {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
