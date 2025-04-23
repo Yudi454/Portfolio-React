@@ -5,25 +5,32 @@ export const Footer = () => {
     <>
       <hr />
       <div className="Footer text-center">
-        <Row>
-          <Col lg={5}></Col>
-          <Col lg={3}>
-            <Row>
-              <Col lg={6}>Inicio</Col>
-              <Col lg={6}>Sobre mí</Col>
-              <Col lg={6}>Proyectos</Col>
-              <Col lg={6}>Contacto</Col>
-            </Row>
+        <Row className="align-items-center g-0">
+          <Col lg={5}>
+          <Row>
+            <Col lg={12} className="mb-2">© 2025 TuNombre</Col>
+            <Col className="mt-3">Todos los derechos reservados</Col>
+          </Row>
           </Col>
           <Col lg={3}>
             <Row>
+              <Col lg={6} className="mb-5">Inicio</Col>
+              <Col lg={6} className="">Sobre mí</Col>
+              <Col lg={6} className="">Proyectos</Col>
+              <Col lg={6} className="">Contacto</Col>
+            </Row>
+          </Col>
+          <Col lg={3}>
+            <Row className="align-items-center">
               <Col lg={6}>
-                <i class="Github devicon-github-original-wordmark colored"></i>
+                <i className="Github devicon-github-original-wordmark colored"></i>
               </Col>
               <Col lg={6}>
-                <i class="LinkedIn devicon-linkedin-plain-wordmark colored"></i>
+                <i className="LinkedIn devicon-linkedin-plain-wordmark colored"></i>
               </Col>
-              <Col></Col>
+              <Col>
+              <i className="Google fa fa-google" style={{color: "#d93025"}}></i>
+              </Col>
             </Row>
           </Col>
         </Row>

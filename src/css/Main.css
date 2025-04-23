@@ -49,6 +49,10 @@ hr{
   font-size: 12vh;
 }
 
+.Google{
+  font-size: 5vh !important;
+}
+
 @keyframes aparecer {
     from {
       opacity: 0;
