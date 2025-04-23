@@ -7,7 +7,7 @@ export const Main = ({ datos }) => {
     <div className="Main">
       <Row className="align-items-center g-0" >
         {/* Primera Card */}
-        <Col lg={4} className="d-flex justify-content-center text-center">
+        <Col lg={4} className="Card1 d-flex justify-content-center text-center">
           <Card style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Text>
@@ -21,8 +21,8 @@ export const Main = ({ datos }) => {
         </Col>
         {/* Segunda Card */}
         <Col className="Card2 d-flex justify-content-center" lg={4} >
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="../../public/fotoMia.jpg" />
+          <Card className="ImagenRedonda" style={{ width: "18rem" }}>
+            <Card.Img className="ImagenRedonda" variant="top" src="../../public/fotoMia.jpg" />
           </Card>
         </Col>
         {/* Tercera Card */}
