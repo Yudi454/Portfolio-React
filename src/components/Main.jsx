@@ -2,11 +2,12 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import "../css/Main.css"
 
 export const Main = ({ datos }) => {
+  
   return (
     <>
-      <Row>
+      <Row className="align-items-center">
         {/* Primera Card */}
-        <Col lg={4}>
+        <Col lg={4} className="d-flex justify-content-center text-center">
           <Card style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Text>
@@ -19,19 +20,19 @@ export const Main = ({ datos }) => {
           </Card>
         </Col>
         {/* Segunda Card */}
-        <Col className="Card2" lg={4}>
+        <Col className="Card2 d-flex justify-content-center" lg={4} >
           <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src="../../public/fotoMia.jpg" />
           </Card>
         </Col>
         {/* Tercera Card */}
-        <Col className="Card3" lg={4}>
+        <Col className="Card3 d-flex justify-content-center" lg={4}>
           <Card style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Text>Los lenguajes y tecnologias que manejo son:</Card.Text>
               <ul>
                 {datos.lenguajesYTecnologias.map((lenguaje, index) => (
-                  <li key={index}>{lenguaje}</li>
+                  <li key={index}>{lenguaje.nombre}  <i className={`${lenguaje.icono}`}></i></li>
                 ))}
               </ul>
             </Card.Body>

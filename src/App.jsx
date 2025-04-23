@@ -1,6 +1,7 @@
 import { Home } from "./pages/home"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'devicon/devicon.min.css';
 
 function App() {
 
