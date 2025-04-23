@@ -12,7 +12,7 @@ hr{
 }
 
 .card {
-    background-color:  #dbeafe !important;
+    background-color:  #AAB7B8 !important;
 }
 
 .Card2{
@@ -24,19 +24,19 @@ hr{
 }
 
 .Main{
-  background-color: #f0f9ff;
+  background-color: #BCC6D3;
   padding-top: 6vh;
   padding-bottom: 6vh;
 }
 
 .Header{
-  background-color: #bfdbfe;
+  background-color: #5D6D7E;
   padding-top: 4vh;
   padding-bottom: 4vh;
 }
 
 .Footer{
-  background-color: #bfdbfe;
+  background-color: #5D6D7E;
   padding-top: 4vh;
   padding-bottom: 4vh;
 }
