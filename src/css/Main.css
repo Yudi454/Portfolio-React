@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+ul{
+  list-style: none;
+}
+
+hr{
+  margin: 0 !important;
+}
+
 .card {
     background-color:  #dbeafe !important;
 }
@@ -15,6 +23,24 @@
     animation: aparecer 3s;
 }
 
+.Main{
+  background-color: #f0f9ff;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+}
+
+.Header{
+  background-color: #bfdbfe;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.Footer{
+  background-color: #bfdbfe;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
 @keyframes aparecer {
     from {
       opacity: 0;
@@ -23,7 +49,3 @@
       opacity: 1;
     }
   }
-
-ul{
-  list-style: none;
-}

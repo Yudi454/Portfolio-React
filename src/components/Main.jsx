@@ -4,8 +4,8 @@ import "../css/Main.css"
 export const Main = ({ datos }) => {
   
   return (
-    <>
-      <Row className="align-items-center">
+    <div className="Main">
+      <Row className="align-items-center g-0" >
         {/* Primera Card */}
         <Col lg={4} className="d-flex justify-content-center text-center">
           <Card style={{ width: "18rem" }}>
@@ -39,6 +39,6 @@ export const Main = ({ datos }) => {
           </Card>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
