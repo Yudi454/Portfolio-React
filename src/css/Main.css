@@ -11,6 +11,34 @@ hr{
   margin: 0 !important;
 }
 
+@media screen and (max-width: 768px) {
+  .Card2{
+    margin-top: 4vh !important;
+  }
+
+  .Card3{
+    margin-top: 4vh !important;
+  }
+
+  .Inicio{
+    margin-bottom: 0 !important;
+    margin-top: 2vh !important;
+  }
+
+  .SobreMi{
+    margin-top: 2vh !important;
+  }
+
+  .Proyectos{
+    margin-top: 2vh !important;
+  }
+
+  .Contacto{
+    margin-top: 2vh !important;
+    margin-bottom: 2vh !important;
+  }
+}
+
 .card {
     background-color:  #AAB7B8 !important;
 }
@@ -36,9 +64,13 @@ hr{
 }
 
 .Footer{
-  background-color: #5D6D7E;
+  background-color: #4A5A63;
   padding-top: 4vh;
   padding-bottom: 4vh;
+}
+
+.Inicio{
+  margin-bottom: 3rem ;
 }
 
 .Github{

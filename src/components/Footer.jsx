@@ -4,24 +4,24 @@ export const Footer = () => {
   return (
     <>
       <hr />
-      <div className="Footer text-center">
+      <div className="Footer text-center fw-bold">
         <Row className="align-items-center g-0">
           <Col lg={5}>
-          <Row>
+          <Row className="g-0">
             <Col lg={12} className="mb-2">© 2025 TuNombre</Col>
             <Col className="mt-3">Todos los derechos reservados</Col>
           </Row>
           </Col>
           <Col lg={3}>
-            <Row>
-              <Col lg={6} className="mb-5">Inicio</Col>
-              <Col lg={6} className="">Sobre mí</Col>
-              <Col lg={6} className="">Proyectos</Col>
-              <Col lg={6} className="">Contacto</Col>
+            <Row className="g-0">
+              <Col lg={6} className="Inicio">Inicio</Col>
+              <Col lg={6} className="SobreMi">Sobre mí</Col>
+              <Col lg={6} className="Proyectos">Proyectos</Col>
+              <Col lg={6} className="Contacto">Contacto</Col>
             </Row>
           </Col>
           <Col lg={3}>
-            <Row className="align-items-center">
+            <Row className="align-items-center g-0">
               <Col lg={6}>
                 <i className="Github devicon-github-original-wordmark colored"></i>
               </Col>
