@@ -41,6 +41,14 @@ hr{
   padding-bottom: 4vh;
 }
 
+.Github{
+  font-size: 7vh;
+}
+
+.LinkedIn{
+  font-size: 12vh;
+}
+
 @keyframes aparecer {
     from {
       opacity: 0;
