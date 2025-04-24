@@ -1,6 +1,10 @@
 import { Col, Row } from "react-bootstrap";
 
-export const Footer = () => {
+export const Footer = ({redes}) => {
+
+  console.log(redes[0].logo);
+  
+
   return (
     <>
       <hr />
@@ -23,13 +27,13 @@ export const Footer = () => {
           <Col lg={3}>
             <Row className="align-items-center g-0">
               <Col lg={6}>
-                <i className="Github devicon-github-original-wordmark colored"></i>
+                <a href={redes[0].link} target="_blank"><i className={redes[0].logo}></i></a>
               </Col>
               <Col lg={6}>
-                <i className="LinkedIn devicon-linkedin-plain-wordmark colored"></i>
+                <a href={redes[1].link} target="_blank" className="text-decoration-none"><i className={redes[1].logo}></i></a>
               </Col>
               <Col>
-              <i className="Google fa fa-google" style={{color: "#d93025"}}></i>
+              <a href={redes[2].link} target="_blank"><i className={redes[2].logo}></i></a>
               </Col>
             </Row>
           </Col>

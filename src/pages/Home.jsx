@@ -46,14 +46,23 @@ export const Home = () => {
                 nombre: "Express",
                 icono: "devicon-express-original colored"
             }],
-        redes: {}
+        redes: [{
+            logo: "Github devicon-github-original-wordmark colored",
+            link: "https://github.com/Yudi454"
+        },{
+            logo: "LinkedIn devicon-linkedin-plain-wordmark colored",
+            link: "https://www.linkedin.com/in/lucas-agust%C3%ADn-yudi-32a536273/"
+        },{
+            logo: "Google fa fa-google text-danger",
+            link: "https://mail.google.com/mail/?view=cm&fs=1&to=lucasyudi445@gmail.com"
+        }]
     }
 
     return (
         <>
         <Header nombre={datos.nombre} apellido={datos.apellido}/>
         <Main datos={datos} />
-        <Footer/>
+        <Footer redes={datos.redes}/>
         </>
     )
 }
