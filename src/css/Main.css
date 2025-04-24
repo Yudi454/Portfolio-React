@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+hr{
+  margin: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .Card2{
+    margin-top: 4vh !important;
+  }
+
+  .Card3{
+    margin-top: 4vh !important;
+  }
+
+  .Inicio{
+    margin-bottom: 0 !important;
+    margin-top: 2vh !important;
+  }
+
+  .SobreMi{
+    margin-top: 2vh !important;
+  }
+
+  .Proyectos{
+    margin-top: 2vh !important;
+  }
+
+  .Contacto{
+    margin-top: 2vh !important;
+    margin-bottom: 2vh !important;
+  }
+}
+
+.card {
+    background-color:  #AAB7B8 !important;
+}
+
+.Card1{
+  animation: aparecer 3s;
+}
+
+.Card2{
+    animation: aparecer 4s;
+}
+
+.Card3{
+    animation: aparecer 5s;
+}
+
+.Main{
+  background-color: #BCC6D3;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+}
+
+.Header{
+  background-color: #5D6D7E;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.Footer{
+  background-color: #4A5A63;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.Inicio{
+  margin-bottom: 3rem ;
+}
+
+.Github{
+  font-size: 7vh;
+}
+
+.LinkedIn{
+  font-size: 12vh;
+}
+
+.Google{
+  font-size: 5vh !important;
+}
+
+.ImagenRedonda{
+  width: 18rem;
+  border-radius: 50% !important;
+}
+
+@keyframes aparecer {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
