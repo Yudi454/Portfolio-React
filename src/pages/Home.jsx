@@ -60,9 +60,8 @@ export const Home = () => {
 
     return (
         <>
-        <Header nombre={datos.nombre} apellido={datos.apellido}/>
         <Main datos={datos} />
-        <Footer redes={datos.redes}/>
+
         </>
     )
 }

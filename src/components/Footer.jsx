@@ -2,9 +2,6 @@ import { Col, Row } from "react-bootstrap";
 
 export const Footer = ({redes}) => {
 
-  console.log(redes[0].logo);
-  
-
   return (
     <>
       <hr />
