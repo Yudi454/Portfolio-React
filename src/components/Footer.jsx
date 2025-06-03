@@ -1,6 +1,8 @@
 import { Col, Row } from "react-bootstrap";
 
-export const Footer = ({redes}) => {
+export const Footer = () => {
+
+    const {redes} = JSON.parse(localStorage.getItem("datos"))
 
   return (
     <>
