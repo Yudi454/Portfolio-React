@@ -13,14 +13,13 @@ import Contact from "./pages/Contact/Contact";
 import Project from "./pages/projects/Projects";
 import Projects from "./pages/projects/Projects";
 import Error404 from "./pages/error404/error404";
+import "./language/i18n"
 
 function App() {
 
 
   useEffect(() => {
-    getDatos()
-    console.log(JSON.parse(localStorage.getItem("datos")));
-    
+    getDatos()    
   },[])
 
   return (

@@ -1,0 +1,69 @@
+/* Boton de claro a oscuro */
+.btnClaro {
+  font-weight: bold;
+  z-index: 0; /*Posisiona el boton en 0*/
+  position: relative; /*Hace al boton fijo para que le afecte el after*/
+  transition: all 1.5s ease; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
+  padding: 1vh;
+  color: black;
+  white-space: nowrap; /*Evita que el texto se parta*/
+  background-color: #1e90ff;
+  border: solid 3px #60a5fa !important;
+}
+
+/*Carga el bordo solo con el hover para que el after actue solo*/
+.btnClaro:hover {
+  border: solid 3px #1e40af !important;
+}
+
+/* Crea un nuevo elemento */
+.btnClaro::after {
+  content: ""; /*Permite que ese elemento este vacio*/
+  position: absolute; /*El tamaño del elemento se basa al ultimo relativo (que es el boton)*/
+  z-index: -1; /*Posiciona el elmento atras del texto del boton, no se posiciona atras del boton porque el after se crea en base a este*/
+  transition: all 1s ease;
+  left: 0; /*Posiciona el elmento encima del boton*/
+  top: 0; /*Posiciona el elmento encima del boton*/
+  width: 0; /*Hace que no tenga largo por lo tanto no se muestre*/
+  height: 100%; /*Le da un tamaño fijo proporcional al boton*/
+  background-color: #2563eb;
+}
+
+.btnClaro:hover::after {
+  width: 100%; /*Hace que su largo se agrande, dando el efecto con transition*/
+}
+
+/* Boton de oscuro a claro */
+.btnOscuro {
+  font-weight: bold;
+  z-index: 0; /*Posisiona el boton en 0*/
+  position: relative; /*Hace al boton fijo para que le afecte el after*/
+  transition: all 1.5s ease; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
+  padding: 1vh;
+  color: black;
+  white-space: nowrap; /*Evita que el texto se parta*/
+  background-color: #2563eb;
+  border: solid 3px #1e40af !important;
+}
+
+/*Carga el bordo solo con el hover para que el after actue solo*/
+.btnOscuro:hover {
+  border: solid 3px #60a5fa !important;
+}
+
+/* Crea un nuevo elemento */
+.btnOscuro::after {
+  content: ""; /*Permite que ese elemento este vacio*/
+  position: absolute; /*El tamaño del elemento se basa al ultimo relativo (que es el boton)*/
+  z-index: -1; /*Posiciona el elmento atras del texto del boton, no se posiciona atras del boton porque el after se crea en base a este*/
+  transition: all 1s ease;
+  left: 0; /*Posiciona el elmento encima del boton*/
+  top: 0; /*Posiciona el elmento encima del boton*/
+  width: 0; /*Hace que no tenga largo por lo tanto no se muestre*/
+  height: 100%; /*Le da un tamaño fijo proporcional al boton*/
+  background-color: #1e90ff;
+}
+
+.btnOscuro:hover::after {
+  width: 100%; /*Hace que su largo se agrande, dando el efecto con transition*/
+}
