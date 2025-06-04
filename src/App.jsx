@@ -13,27 +13,25 @@ import Contact from "./pages/Contact/Contact";
 import Project from "./pages/projects/Projects";
 import Projects from "./pages/projects/Projects";
 import Error404 from "./pages/error404/error404";
-import "./language/i18n"
+import "./language/i18n";
 
 function App() {
-
-
   useEffect(() => {
-    getDatos()    
-  },[])
+    getDatos();
+  }, []);
 
   return (
     <>
       <BrowserRouter>
-      <Header/>
+        <Header />
         <Routes>
           <Route path={HOME} element={<Home />} />
-          <Route path={ABOUTME} element={<AboutMe/>} />
-          <Route path={CONTACT} element={<Contact/>}/>
-          <Route path={PROJECTS} element={<Projects/>} />
-          <Route path={ERROR} element={<Error404/>} />
+          <Route path={ABOUTME} element={<AboutMe />} />
+          <Route path={CONTACT} element={<Contact />} />
+          <Route path={PROJECTS} element={<Projects />} />
+          <Route path={ERROR} element={<Error404 />} />
         </Routes>
-      <Footer />
+        <Footer />
       </BrowserRouter>
     </>
   );

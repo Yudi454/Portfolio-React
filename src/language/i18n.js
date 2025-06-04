@@ -7,9 +7,10 @@ const resources = {
       a_cerca_de_mi: "Aboute me",
       contactame: "Contact me",
       proyectos: "Projects",
-      inicion: "Home",
+      inicio: "Home",
       modo_oscuro: "Dark Mode",
       modo_claro: "Light Mode",
+      funciones: "Functions"
     },
   },
   es: {
@@ -20,6 +21,7 @@ const resources = {
       inicio: "Inicio",
       modo_oscuro: "Modo Oscuro",
       modo_claro: "Modo Claro",
+      funciones: "Funciones"
       },
   },
 };

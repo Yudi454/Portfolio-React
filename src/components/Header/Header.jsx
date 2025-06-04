@@ -1,11 +1,11 @@
 import { useLocation } from "react-router-dom";
-import "../../css/cambiar_color/ModoOscuro.css";
 import { useStore } from "../../store/AuthStore";
 import { useTranslation } from "react-i18next";
-import "../../css/header/Header.css";
-import "../../css/botones/Botones.css";
 import { useState } from "react";
 import NavBar from "./NavBar";
+import "../../css/cambiar_color/ModoOscuro.css";
+import "../../css/header/Header.css";
+import "../../css/botones/Botones.css";
 
 export const Header = () => {
   const { nombre, apellido } = JSON.parse(localStorage.getItem("datos"));
@@ -15,6 +15,8 @@ export const Header = () => {
   const location = useLocation();
 
   const [pagina, setPagina] = useState(location.pathname.substring(1));
+
+  const [menuAbierto,setMenuAbierto] = useState(false)
 
   const color = useStore((state) => state.color);
 
@@ -31,6 +33,8 @@ export const Header = () => {
         setPagina={setPagina}
         color={color}
         changeColor={changeColor}
+        menuAbierto={menuAbierto}
+        setMenuAbierto={setMenuAbierto}
       />
     </div>
   );
