@@ -1,23 +1,24 @@
 /* Boton de claro a oscuro */
-.btnClaro {
-  font-weight: bold;
+.btnCambiarClaro {
+  font-weight: bold !important;
   z-index: 0; /*Posisiona el boton en 0*/
   position: relative; /*Hace al boton fijo para que le afecte el after*/
   transition: all 1.5s ease; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
   padding: 1vh;
-  color: black;
+  color: black !important;
   white-space: nowrap; /*Evita que el texto se parta*/
-  background-color: #1e90ff;
+  background-color: #1e90ff !important;
   border: solid 3px #60a5fa !important;
 }
 
 /*Carga el bordo solo con el hover para que el after actue solo*/
-.btnClaro:hover {
+.btnCambiarClaro:hover {
   border: solid 3px #1e40af !important;
+  color: white !important;
 }
 
 /* Crea un nuevo elemento */
-.btnClaro::after {
+.btnCambiarClaro::after {
   content: ""; /*Permite que ese elemento este vacio*/
   position: absolute; /*El tamaño del elemento se basa al ultimo relativo (que es el boton)*/
   z-index: -1; /*Posiciona el elmento atras del texto del boton, no se posiciona atras del boton porque el after se crea en base a este*/
@@ -26,33 +27,34 @@
   top: 0; /*Posiciona el elmento encima del boton*/
   width: 0; /*Hace que no tenga largo por lo tanto no se muestre*/
   height: 100%; /*Le da un tamaño fijo proporcional al boton*/
-  background-color: #2563eb;
+  background-color: #2563eb !important;
 }
 
-.btnClaro:hover::after {
+.btnCambiarClaro:hover::after {
   width: 100%; /*Hace que su largo se agrande, dando el efecto con transition*/
 }
 
 /* Boton de oscuro a claro */
-.btnOscuro {
-  font-weight: bold;
+.btnCambiarOscuro {
+  font-weight: bold !important;
   z-index: 0; /*Posisiona el boton en 0*/
   position: relative; /*Hace al boton fijo para que le afecte el after*/
   transition: all 1.5s ease; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
   padding: 1vh;
-  color: black;
+  color: white !important;
   white-space: nowrap; /*Evita que el texto se parta*/
-  background-color: #2563eb;
+  background-color: #2563eb !important;
   border: solid 3px #1e40af !important;
 }
 
 /*Carga el bordo solo con el hover para que el after actue solo*/
-.btnOscuro:hover {
+.btnCambiarOscuro:hover {
   border: solid 3px #60a5fa !important;
+  color: black !important;
 }
 
 /* Crea un nuevo elemento */
-.btnOscuro::after {
+.btnCambiarOscuro::after {
   content: ""; /*Permite que ese elemento este vacio*/
   position: absolute; /*El tamaño del elemento se basa al ultimo relativo (que es el boton)*/
   z-index: -1; /*Posiciona el elmento atras del texto del boton, no se posiciona atras del boton porque el after se crea en base a este*/
@@ -64,6 +66,6 @@
   background-color: #1e90ff;
 }
 
-.btnOscuro:hover::after {
+.btnCambiarOscuro:hover::after {
   width: 100%; /*Hace que su largo se agrande, dando el efecto con transition*/
 }

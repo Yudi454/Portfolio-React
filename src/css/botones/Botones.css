@@ -1,0 +1,29 @@
+.btnClaro {
+  font-weight: bold !important;
+  transition: all 1s ; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
+  padding: 1vh;
+  color: black !important;
+  white-space: nowrap; /*Evita que el texto se parta*/
+  background-color: #1e90ff !important;
+  border: solid 3px #60a5fa !important;
+}
+
+.btnClaro:hover{
+    background-color: #187bcd !important;
+    font-size: 1.1rem;
+}
+
+.btnOscuro {
+  font-weight: bold !important;
+  transition: all 1s ; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
+  padding: 1vh;
+  color: white !important;
+  white-space: nowrap; /*Evita que el texto se parta*/
+  background-color: #2563eb !important;
+  border: solid 3px #1e40af !important;
+}
+
+.btnOscuro:hover{
+    background-color: #1d4ed8 !important;
+    font-size: 1.1rem;
+}

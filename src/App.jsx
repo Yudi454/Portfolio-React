@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.min.css";
 import "devicon/devicon.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ABOUTME, CONTACT, ERROR, HOME, PROJECTS } from "./routes/Rutas";
-import { Header } from "./components/Header";
+import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer";
 import { useEffect } from "react";
 import { getDatos } from "./customHooks/UseApi";

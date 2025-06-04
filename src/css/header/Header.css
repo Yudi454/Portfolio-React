@@ -1,0 +1,55 @@
+.headerClaro,.headerOscuro{
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+
+.headerClaro{
+  background: linear-gradient(to right,#3b82f6, #1e3a8a);
+}
+
+.headerOscuro{
+  background: linear-gradient(to right,#1e40af, #0f172a );
+}
+
+.textoClaro{
+    color: black;
+    font-weight: bold;
+}
+
+.textoOscuro{
+    color: white;
+    font-weight: bold;
+}
+
+a:hover{
+    transition: 0.5s;
+    font-size: 1.4rem !important;
+}
+
+.linkSeleccionadoClaro{
+ border-bottom: solid 5px #1e90ff;
+}
+
+.linkSeleccionadoOscuro{
+ border-bottom: solid 5px #1e40af;
+}
+
+.dropdown-menu{
+    padding: 0 !important;
+}
+
+.dropdownClaro .dropdown-menu{
+  border: solid 3px #1e40af;
+}
+
+.dropdownOscuro .dropdown-menu{
+ border: solid 3px #60a5fa;
+}
+
+.dropdownClaro .dropdown-menu,.dropdownClaro .dropdown-item{
+  background: linear-gradient(to right,#3b82f6, #1e3a8a) !important;
+}
+
+.dropdownOscuro .dropdown-menu,.dropdownOscuro .dropdown-item{
+  background: linear-gradient(to right,#1e40af, #0f172a) !important;
+}
