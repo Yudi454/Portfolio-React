@@ -50,11 +50,11 @@ const NavBar = ({
             className={menuAbierto ? "d-flex d-md-none" : "d-none d-md-none"}
           >
             <ul>
-              <li
-                className={pagina === "aboutme" && `linkSeleccionado${color}`}
-              >
+              <li>
                 <Link
-                  className={`texto${color} link${color} fs-5`}
+                  className={`${
+                    pagina === "aboutme" && `linkSeleccionado${color}`
+                  }texto${color} link${color} fs-5`}
                   to={ABOUTME}
                   onClick={() => setPagina("aboutme")}
                 >

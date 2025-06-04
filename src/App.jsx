@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer";
 import { useEffect } from "react";
 import { getDatos } from "./customHooks/UseApi";
 import AboutMe from "./pages/About_Me/AboutMe";
-import Contact from "./pages/Contact/Contact";
+import Contact from "./pages/contact/Contact";
 import Project from "./pages/projects/Projects";
 import Projects from "./pages/projects/Projects";
 import Error404 from "./pages/error404/error404";

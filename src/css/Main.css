@@ -94,6 +94,21 @@ hr{
   border-radius: 50% !important;
 }
 
+.fondoCuerpoClaro {
+
+}
+
+
+.fondoCuerpoOscuro {
+ background-color: black;
+}
+
+.inputOscuro{
+ background-color: gray !important;
+ border: gray !important;
+
+}
+
 @keyframes aparecer {
     from {
       opacity: 0;

@@ -1,6 +1,6 @@
 .btnClaro {
   font-weight: bold !important;
-  transition: all 1s ; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
+  transition: all 0.5s !important; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
   padding: 1vh;
   color: black !important;
   white-space: nowrap; /*Evita que el texto se parta*/
@@ -15,7 +15,7 @@
 
 .btnOscuro {
   font-weight: bold !important;
-  transition: all 1s ; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
+  transition: all 0.5s !important; /*all hace que todo le aplique a todo el boton y ease hace que empieze lento y termine rapido*/
   padding: 1vh;
   color: white !important;
   white-space: nowrap; /*Evita que el texto se parta*/

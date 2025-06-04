@@ -12,12 +12,12 @@
 }
 
 .textoClaro{
-    color: black;
+    color: black !important;
     font-weight: bold;
 }
 
 .textoOscuro{
-    color: white;
+    color: white !important;
     font-weight: bold;
 }
 
