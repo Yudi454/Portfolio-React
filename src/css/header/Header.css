@@ -1,13 +1,13 @@
-.headerClaro,.headerOscuro{
+.fondoClaro,.fondoOscuro{
   padding-top: 4vh;
   padding-bottom: 4vh;
 }
 
-.headerClaro{
+.fondoClaro{
   background: linear-gradient(to right,#3b82f6, #6d8bdd);
 }
 
-.headerOscuro{
+.fondoOscuro{
   background: linear-gradient(to right,#1e40af, #0f172a );
 }
 
