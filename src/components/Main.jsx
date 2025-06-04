@@ -3,6 +3,8 @@ import "../css/Main.css"
 
 export const Main = ({ datos }) => {
   
+    const {nombre,apellido,edad,lenguajesYTecnologias} = JSON.parse(localStorage.getItem("datos"))
+
   return (
     <div className="Main">
       <Row className="align-items-center g-0" >
@@ -11,7 +13,7 @@ export const Main = ({ datos }) => {
           <Card style={{ width: "18rem" }}>
             <Card.Body>
               <Card.Text>
-                Soy {datos.nombre} {datos.apellido}, tengo {datos.edad} años,
+                Soy {nombre} {apellido}, tengo {edad} años,
                 soy desarrollador full-stack. Me especializo en JavaScript,
                 React, Node.js y bases de datos, combinando diseño y lógica para
                 construir experiencias completas
@@ -31,7 +33,7 @@ export const Main = ({ datos }) => {
             <Card.Body>
               <Card.Text>Los lenguajes y tecnologias que manejo son:</Card.Text>
               <ul>
-                {datos.lenguajesYTecnologias.map((lenguaje, index) => (
+                {lenguajesYTecnologias.map((lenguaje, index) => (
                   <li key={index}>{lenguaje.nombre}  <i className={`${lenguaje.icono}`}></i></li>
                 ))}
               </ul>

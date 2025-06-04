@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+a{
+  text-decoration: none !important;
+}
+
 ul{
   list-style: none;
 }
@@ -61,11 +65,7 @@ hr{
   padding-bottom: 6vh;
 }
 
-.Header{
-  background-color: #5D6D7E;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
-}
+
 
 .Footer{
   background-color: #4A5A63;
