@@ -1,19 +1,23 @@
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
 import { useStore } from "../../store/AuthStore";
 import Formulario from "./Formulario";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 
 const Contact = () => {
-  const [datos, setDatos] = useState();
-
   const color = useStore((state) => state.color);
 
-  const {register,handleSubmit,formState: {errors},reset} = useForm()
+  const MySwal = withReactContent(Swal);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
   const onSubmit = async (data) => {
-
     try {
       console.log(data);
       const res = await emailjs.send(
@@ -25,10 +29,19 @@ const Contact = () => {
         }
       );
 
-      console.log("Enviado con exito");
-      reset()
+      MySwal.fire({
+        title: "¡Envio Exitoso!",
+        html: "El email fue enviado con éxito",
+        icon: "success",
+      });
+
+      reset();
     } catch (error) {
-      console.log(error);
+      MySwal.fire({
+        title: "Ocurrio algun error",
+        html: error,
+        icon: "error",
+      });
     }
   };
 
@@ -39,8 +52,6 @@ const Contact = () => {
       <h2>Formulario para contactarme</h2>
       <Formulario
         color={color}
-        setDatos={setDatos}
-        datos={datos}
         register={register}
         handleSubmit={handleSubmit}
         errors={errors}
