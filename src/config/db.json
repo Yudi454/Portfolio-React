@@ -59,6 +59,33 @@
         "logo": "Google fa fa-google text-danger",
         "link": "https://mail.google.com/mail/?view=cm&fs=1&to=lucasyudi445@gmail.com"
       }
+    ],
+    "proyectos": [
+      {
+        "imagen": "",
+        "titulo": "Página para restaurante",
+        "descripcion": "Proyecto donde realice una página web sobre un restaurante usando React, con un apartado de reservas y un crud completo.",
+        "linkFront": "https://github.com/Yudi454/Proyecto-Restaurant-Front",
+        "linkBack": "https://github.com/Yudi454/Proyecto-Restaurant-Back"
+      },
+      {
+        "imagen": "",
+        "titulo": "Página E-commerce",
+        "descripcion": "Proyecto donde realice una página web E-commerce usando js,html y css. Con un crud completo.",
+        "linkFront": "https://github.com/Yudi454/Proyecto-LuminCare"
+      },
+      {
+        "imagen": "",
+        "titulo": "Página Disney Plus",
+        "descripcion": "Proyecto donde recreé la página web de Disney plus con html y css.",
+        "linkFront": "https://github.com/Yudi454/Proyecto-Streaming"
+      },
+      {
+        "imagen": "",
+        "titulo": "Página Drugstore",
+        "descripcion": "Proyecto donde realice una página web sobre un drugstore con js,html y css. Con un crud completo.",
+        "linkFront": ""
+      }
     ]
   }
 }
