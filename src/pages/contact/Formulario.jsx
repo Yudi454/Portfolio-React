@@ -1,5 +1,4 @@
 import { Button, Form } from "react-bootstrap";
-import "../../css/formulario/formulario.css";
 
 const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
   return (

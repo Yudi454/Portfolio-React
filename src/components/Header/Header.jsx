@@ -3,9 +3,6 @@ import { useStore } from "../../store/AuthStore";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import NavBar from "./NavBar";
-import "../../css/cambiar_color/ModoOscuro.css";
-import "../../css/header/Header.css";
-import "../../css/botones/Botones.css";
 
 export const Header = () => {
   const { nombre, apellido } = JSON.parse(localStorage.getItem("datos"));
