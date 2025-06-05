@@ -61,31 +61,31 @@ const NavBar = ({
                   {t("a_cerca_de_mi")}
                 </Link>
               </li>
-              <li
-                className={pagina === "contact" && `linkSeleccionado${color}`}
-              >
+              <li>
                 <Link
-                  className={`texto${color} link${color} fs-5`}
+                  className={`${
+                    pagina === "contact" && `linkSeleccionado${color}`
+                  } texto${color} link${color} fs-5`}
                   to={CONTACT}
                   onClick={() => setPagina("contact")}
                 >
                   {t("contactame")}
                 </Link>
               </li>
-              <li
-                className={pagina === "projects" && `linkSeleccionado${color}`}
-              >
+              <li>
                 <Link
-                  className={`texto${color} link${color} fs-5`}
+                  className={`${
+                    pagina === "projects" && `linkSeleccionado${color}`
+                  } texto${color} link${color} fs-5`}
                   to={PROJECTS}
                   onClick={() => setPagina("projects")}
                 >
                   {t("proyectos")}
                 </Link>
               </li>
-              <li className={pagina === "" && `linkSeleccionado${color}`}>
+              <li>
                 <Link
-                  className={`texto${color} link${color} fs-5`}
+                  className={`${pagina === "" && `linkSeleccionado${color}`} texto${color} link${color} fs-5`}
                   to={HOME}
                   onClick={() => setPagina("")}
                 >

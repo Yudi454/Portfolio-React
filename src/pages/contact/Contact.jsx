@@ -3,28 +3,30 @@ import { Button, Form } from "react-bootstrap";
 import { useStore } from "../../store/AuthStore";
 import Formulario from "./Formulario";
 import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const [datos, setDatos] = useState();
 
   const color = useStore((state) => state.color);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const {register,handleSubmit,formState: {errors},reset} = useForm()
+
+  const onSubmit = async (data) => {
 
     try {
-      console.log("algo");
-      const res = await emailjs.sendForm(
+      console.log(data);
+      const res = await emailjs.send(
         "service_2huq26j",
         "template_9f33zae",
-        e.target,
+        data,
         {
           publicKey: "Li3Fk3GE7Vbe9Lf7H",
         }
       );
 
       console.log("Enviado con exito");
-      e.target.reset()
+      reset()
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +41,10 @@ const Contact = () => {
         color={color}
         setDatos={setDatos}
         datos={datos}
+        register={register}
         handleSubmit={handleSubmit}
+        errors={errors}
+        onSubmit={onSubmit}
       />
     </div>
   );
