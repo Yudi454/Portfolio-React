@@ -1,4 +1,4 @@
-import { Home } from "./pages/Home";
+import { Home } from "./pages/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ABOUTME, CONTACT, ERROR, HOME, PROJECTS } from "./routes/Rutas";
 import { Header } from "./components/Header/Header";
@@ -12,6 +12,7 @@ import Error404 from "./pages/error404/error404";
 import "./language/i18n";
 import "./css/modoClaro/ModoClaro.css"
 import "./css/modoOscuro/ModoOscuro.css"
+import "./css/Main.css"
 import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "sweetalert2/dist/sweetalert2.min.css";

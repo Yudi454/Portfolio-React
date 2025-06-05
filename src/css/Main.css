@@ -1,6 +1,6 @@
 *{
   margin: 0;
-  padding: 0;
+padding: 0 ;
 }
 
 a{
@@ -54,6 +54,11 @@ hr{
 .Card3{
     animation: aparecer 5s;
 }
+
+.row{
+  --bs-gutter-x: 0 !important;
+}
+
 
 .Main{
   background-color: #BCC6D3;

@@ -124,7 +124,7 @@ const NavBar = ({
             </ul>
           </div>
           <Row className="text-center">
-            <div className="d-none d-md-flex">
+            <div className="d-none d-md-flex p-0">
               <Col
                 md={3}
                 className={pagina === "aboutme" && `linkSeleccionado${color}`}
