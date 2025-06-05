@@ -8,7 +8,7 @@ const MainProjects = ({ color, proyectos }) => {
     <div className={`pt-4 pb-4 fondoCuerpo${color}`}>
       <Row>
         {proyectos.map((proyecto) => (
-          <Col md={6} className="d-flex justify-content-center pt-4" key={proyecto.titulo}>
+          <Col md={6} className="p-0 d-flex justify-content-center pt-4" key={proyecto.titulo}>
             <Card
               style={{ width: "18rem" }}
               className={`fondoCard${color} texto${color}`}

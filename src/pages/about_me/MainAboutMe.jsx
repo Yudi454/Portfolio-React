@@ -5,7 +5,7 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) =>
   return (
     <div className={`pt-4 pb-4 fondoCuerpo${color}`}>
       <Row >
-        <Col md={6} className="d-flex align-items-center justify-content-center">
+        <Col md={6} className="p-0 d-flex align-items-center justify-content-center">
             <Card className="ImagenRedonda" style={{ width: "18rem" }}>
               <Card.Img
                 className="ImagenRedonda"
@@ -16,7 +16,7 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) =>
         </Col>
         <Col md={6}>
           <Row>
-            <Col md={12} className="d-flex justify-content-center mt-2">
+            <Col md={12} className="p-0 d-flex justify-content-center mt-2">
               <Card style={{ width: "18rem" }} className={`fondoCard${color}`}>
                 <Card.Body className={`texto${color}`}>
                   <Card.Text>
@@ -28,7 +28,7 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) =>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={12} className="d-flex justify-content-center mt-4">
+            <Col md={12} className="p-0 d-flex justify-content-center mt-4">
               <Card style={{ width: "18rem" }} className={`fondoCard${color}`}>
                 <Card.Body className={`texto${color}`}>
                   <Card.Text>
