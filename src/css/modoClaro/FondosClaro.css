@@ -1,3 +1,7 @@
 .fondoClaro {
   background: linear-gradient(to right, #3b82f6, #6d8bdd);
 }
+
+.fondoCardClaro{
+  background-color: white !important;
+}

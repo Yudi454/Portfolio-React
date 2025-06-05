@@ -43,10 +43,6 @@ hr{
   }
 }
 
-.card {
-    background-color:  #AAB7B8 !important;
-}
-
 .Card1{
   animation: aparecer 3s;
 }
@@ -99,9 +95,7 @@ hr{
 }
 
 
-.fondoCuerpoOscuro {
- background-color: black;
-}
+
 
 .inputOscuro{
  background-color: gray !important;
