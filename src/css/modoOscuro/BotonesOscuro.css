@@ -58,6 +58,6 @@
   border: 2px solid #60a5fa !important;
 }
 
-.btnOscuro:hover {
+.btnOscuro:hover,.dropdownOscuro .dropdown-toggle:hover {
   font-size: 1.1rem;
 }

@@ -59,6 +59,6 @@
   border: solid 3px #ffffff33 !important;
 }
 
-.btnClaro:hover {
+.btnClaro:hover,.dropdownClaro .dropdown-toggle:hover {
   font-size: 1.1rem;
 }

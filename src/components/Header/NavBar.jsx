@@ -129,7 +129,7 @@ const NavBar = ({
             <div className="d-none d-md-flex p-0">
               <Col
                 md={3}
-                className={pagina === "aboutme" && `linkSeleccionado${color}`}
+                className={pagina === "aboutme" && `linkSeleccionado${color} `}
               >
                 <Link
                   className={` texto${color} link${color} fs-5`}

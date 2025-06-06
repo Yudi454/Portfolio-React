@@ -1,3 +1,11 @@
 .linkSeleccionadoClaro {
   border-bottom: solid 5px #3b82f6;
 }
+
+.linkClaro{
+  transition: 1s;
+}
+
+.linkClaro:hover{
+  font-size: 1.4rem !important;
+}
