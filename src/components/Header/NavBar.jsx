@@ -34,25 +34,27 @@ const NavBar = ({
           </div>
         </Col>
         <Col md={8} sm={8} xs={12}>
-          <div className="d-flex d-md-none">
+          <div className="d-flex d-md-none justify-content-center justify-content-sm-start">
             <button
               onClick={() =>
                 menuAbierto ? setMenuAbierto(false) : setMenuAbierto(true)
               }
-              className="d-block d-md-none btn btn-primary"
+              className={`d-block d-md-none btn btn${color}`}
             >
               ☰
             </button>
           </div>
           <div
-            className={menuAbierto ? "d-flex d-md-none" : "d-none d-md-none"}
+            className={`justify-content-center justify-content-sm-start d-md-none ${
+              menuAbierto ? "d-flex" : "d-none"
+            }`}
           >
             <ul>
               <li>
                 <Link
                   className={`${
                     pagina === "aboutme" && `linkSeleccionado${color}`
-                  }texto${color} link${color} fs-5`}
+                  } texto${color} link${color} fs-5`}
                   to={ABOUTME}
                   onClick={() => setPagina("aboutme")}
                 >
@@ -94,7 +96,7 @@ const NavBar = ({
               </li>
               <li>
                 <DropdownButton
-                  className={`dropdown${color}`}
+                  className={`dropdown${color} mt-3`}
                   title="Funciones"
                 >
                   <DropdownItem className="p-0" eventKey="1">
@@ -130,7 +132,7 @@ const NavBar = ({
                 className={pagina === "aboutme" && `linkSeleccionado${color}`}
               >
                 <Link
-                  className={`texto${color} link${color} fs-5`}
+                  className={` texto${color} link${color} fs-5`}
                   to={ABOUTME}
                   onClick={() => setPagina("aboutme")}
                 >

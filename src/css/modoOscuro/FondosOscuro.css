@@ -1,11 +1,26 @@
 .fondoOscuro {
-  background: linear-gradient(to right, #1e40af, #0f172a);
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
 }
 
-.fondoCardOscuro{
+.headerOscuro{
+box-shadow: 0 5px 4px gray;
+
+}
+
+.fondoCardOscuro {
   background-color: gray !important;
 }
 
 .fondoCuerpoOscuro {
- background-color: black;
+  background-color: black;
+}
+
+.dropdownOscuro .dropdown-menu{
+border: solid 3px #1b263b;
+box-shadow: 1px 1px 4px 0px white;
+}
+
+.dropdownOscuro .dropdown-menu,.dropdownOscuro .dropdown-item{
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+
 }

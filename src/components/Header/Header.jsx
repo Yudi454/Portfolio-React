@@ -20,7 +20,7 @@ export const Header = () => {
   const changeColor = useStore((state) => state.changeColor);
 
   return (
-    <div className={`fondo${color}`}>
+    <div className={`fondo${color} header${color} pt-4 pb-3`}>
       <NavBar
         nombre={nombre}
         apellido={apellido}

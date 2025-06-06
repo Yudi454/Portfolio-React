@@ -1,7 +1,22 @@
 .fondoClaro {
-  background: linear-gradient(to right, #3b82f6, #6d8bdd);
+  background: linear-gradient(135deg, #a8c0ff, #91eae4);
 }
 
-.fondoCardClaro{
+.headerClaro {
+  box-shadow: 0px 2px 4px black;
+}
+
+.fondoCardClaro {
   background-color: white !important;
+}
+
+.dropdownClaro .dropdown-menu {
+  border: solid 3px #91eae4;
+  box-shadow: 1px 1px 4px 0px black;
+}
+
+.dropdownClaro .dropdown-menu,
+.dropdownClaro .dropdown-item {
+  background: linear-gradient(135deg, #a8c0ff, #91eae4);
+
 }
