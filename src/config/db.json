@@ -58,29 +58,29 @@
     ],
     "proyectos": [
       {
-        "imagen": "",
+        "imagen": "https://live.staticflickr.com/65535/54570336787_5f0dd14902_b.jpg",
         "titulo": "Página para restaurante",
         "descripcion": "Proyecto donde realice una página web sobre un restaurante usando React, con un apartado de reservas y un crud completo.",
         "linkFront": "https://github.com/Yudi454/Proyecto-Restaurant-Front",
         "linkBack": "https://github.com/Yudi454/Proyecto-Restaurant-Back"
       },
       {
-        "imagen": "",
+        "imagen": "https://live.staticflickr.com/65535/54570336762_d61bfee2c0_b.jpg",
         "titulo": "Página E-commerce",
         "descripcion": "Proyecto donde realice una página web E-commerce usando js,html y css. Con un crud completo.",
         "linkFront": "https://github.com/Yudi454/Proyecto-LuminCare"
       },
       {
-        "imagen": "",
+        "imagen": "https://live.staticflickr.com/65535/54571529820_26b6f81cf9_b.jpg",
         "titulo": "Página Disney Plus",
         "descripcion": "Proyecto donde recreé la página web de Disney plus con html y css.",
         "linkFront": "https://github.com/Yudi454/Proyecto-Streaming"
       },
       {
-        "imagen": "",
+        "imagen": "https://live.staticflickr.com/65535/54571431133_3746c549ae_b.jpg",
         "titulo": "Página Drugstore",
         "descripcion": "Proyecto donde realice una página web sobre un drugstore con js,html y css. Con un crud completo.",
-        "linkFront": ""
+        "linkFront": "https://github.com/Yudi454/Proyecto-Drugstore"
       }
     ]
   }
