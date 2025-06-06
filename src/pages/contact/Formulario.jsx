@@ -2,7 +2,7 @@ import { Button, Form } from "react-bootstrap";
 
 const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
   return (
-    <div className="w-25">
+    <div className="contenedorFormulario">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
           <Form.Label>Nombre</Form.Label>

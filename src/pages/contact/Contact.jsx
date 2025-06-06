@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
+import "../../css/formulario/Formulario.css"
 
 const Contact = () => {
   const color = useStore((state) => state.color);

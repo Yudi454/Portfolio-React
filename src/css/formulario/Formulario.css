@@ -1,0 +1,9 @@
+.contenedorFormulario {
+    width: 50% !important;
+  }
+
+@media (min-width: 768px) {
+  .contenedorFormulario {
+    width: 25% !important;
+  }
+}
