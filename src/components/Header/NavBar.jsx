@@ -21,8 +21,6 @@ const NavBar = ({
   menuAbierto,
   setMenuAbierto,
 }) => {
-  console.log(pagina);
-
   return (
     <>
       <Row className="d-flex align-items-md-end align-items-sm-start align-items-xs-start">
@@ -85,7 +83,9 @@ const NavBar = ({
               </li>
               <li>
                 <Link
-                  className={`${pagina === "" && `linkSeleccionado${color}`} texto${color} link${color} fs-5`}
+                  className={`${
+                    pagina === "" && `linkSeleccionado${color}`
+                  } texto${color} link${color} fs-5`}
                   to={HOME}
                   onClick={() => setPagina("")}
                 >
