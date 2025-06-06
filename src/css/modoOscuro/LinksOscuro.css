@@ -1,3 +1,11 @@
 .linkSeleccionadoOscuro {
   border-bottom: solid 5px #3b82f6;
 }
+
+.linkOscuro{
+  transition: 1s;
+}
+
+.linkOscuro:hover{
+  font-size: 1.4rem !important;
+}
