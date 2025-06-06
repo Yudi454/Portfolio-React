@@ -3,7 +3,7 @@ import { Card, Col, Row } from "react-bootstrap";
 
 const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) => {
   return (
-    <div className={`pt-4 pb-4 fondoCuerpo${color}`}>
+    <div className={`pt-4 pb-4 fondoCuerpo${color} mt-1`}>
       <Row >
         <Col md={6} className="p-0 d-flex align-items-center justify-content-center">
             <Card className="ImagenRedonda" style={{ width: "18rem" }}>
