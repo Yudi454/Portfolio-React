@@ -10,9 +10,9 @@ import Contact from "./pages/contact/Contact";
 import Projects from "./pages/projects/Projects";
 import Error404 from "./pages/error404/error404";
 import "./language/i18n";
-import "./css/modoClaro/ModoClaro.css"
-import "./css/modoOscuro/ModoOscuro.css"
-import "./css/Main.css"
+import "./css/modoClaro/ModoClaro.css";
+import "./css/modoOscuro/ModoOscuro.css";
+import "./css/Main.css";
 import "devicon/devicon.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "sweetalert2/dist/sweetalert2.min.css";
@@ -25,17 +25,19 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path={HOME} element={<Home />} />
-          <Route path={ABOUTME} element={<AboutMe />} />
-          <Route path={CONTACT} element={<Contact />} />
-          <Route path={PROJECTS} element={<Projects />} />
-          <Route path={ERROR} element={<Error404 />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      {localStorage.getItem("datos") != null && (
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path={HOME} element={<Home />} />
+            <Route path={ABOUTME} element={<AboutMe />} />
+            <Route path={CONTACT} element={<Contact />} />
+            <Route path={PROJECTS} element={<Projects />} />
+            <Route path={ERROR} element={<Error404 />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      )}
     </>
   );
 }
