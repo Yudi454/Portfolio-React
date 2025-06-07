@@ -1,14 +1,14 @@
 import { Button, Form } from "react-bootstrap";
 
-const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
+const Formulario = ({ color, register, handleSubmit, errors, onSubmit, t }) => {
   return (
     <div className="contenedorFormulario">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
-          <Form.Label>Nombre</Form.Label>
+          <Form.Label>{t("nombre")}</Form.Label>
           <Form.Control
             className={`input${color} texto${color}`}
-            {...register("name", { required: "El nombre es obligatorio" })}
+            {...register("name", { required: `${t("nom_obl")}` })}
             name="name"
           />
           {errors.name && (
@@ -16,14 +16,14 @@ const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
           )}
         </Form.Group>
         <Form.Group>
-          <Form.Label>Email</Form.Label>
+          <Form.Label>{t("email")}</Form.Label>
           <Form.Control
             className={`input${color} texto${color}`}
             {...register("email", {
-              required: "El email es obligatorio",
+              required: `${t("email_obl")}`,
               pattern: {
                 value: /^\S+@\S+$/i,
-                message: "Email inválido",
+                message: `${t("email_inv")}`,
               },
             })}
             name="email"
@@ -33,10 +33,10 @@ const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
           )}
         </Form.Group>
         <Form.Group>
-          <Form.Label>Asunto</Form.Label>
+          <Form.Label>{t("asunto")}</Form.Label>
           <Form.Control
             className={`input${color} texto${color}`}
-            {...register("title", { required: "El asunto es obligatorio" })}
+            {...register("title", { required: `${t("asnt_obl")}` })}
             name="title"
           />
           {errors.title && (
@@ -44,12 +44,12 @@ const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
           )}
         </Form.Group>
         <Form.Group>
-          <Form.Label>Descripcion</Form.Label>
+          <Form.Label>{t("desc")}</Form.Label>
           <Form.Control
             as="textarea"
             className={`input${color} texto${color}`}
             {...register("message", {
-              required: "La descripcion es obligatoria",
+              required: `${t("desc_obl")}`,
             })}
             name="message"
           />
@@ -58,7 +58,7 @@ const Formulario = ({ color, register, handleSubmit, errors, onSubmit }) => {
           )}
         </Form.Group>
         <Button type="submit" className={`btn${color} mt-4`}>
-          Enviar
+          {t("enviar")}
         </Button>
       </Form>
     </div>

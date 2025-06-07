@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
-const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) => {
+const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color,t }) => {
   return (
     <div className={`pt-4 pb-4 fondoCuerpo${color} mt-1`}>
       <Row >
@@ -20,10 +20,8 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) =>
               <Card style={{ width: "18rem" }} className={`fondoCard${color}`}>
                 <Card.Body className={`texto${color}`}>
                   <Card.Text>
-                    Soy {nombre} {apellido}, tengo {edad} años, soy
-                    desarrollador full-stack. Me especializo en JavaScript,
-                    React, Node.js y bases de datos, combinando diseño y lógica
-                    para construir experiencias completas
+                    {t("soy")} {nombre} {apellido}, {t("tengo")} {edad} {t("años")} , {t("descripcionMia")}
+                    
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -32,7 +30,7 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color }) =>
               <Card style={{ width: "18rem" }} className={`fondoCard${color}`}>
                 <Card.Body className={`texto${color}`}>
                   <Card.Text>
-                    Los lenguajes y tecnologias que manejo son:
+                    {t("lenguajes_y_tecnologias")}
                   </Card.Text>
                   <ul>
                     {lenguajesYTecnologias.map((lenguaje, index) => (

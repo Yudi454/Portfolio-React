@@ -1,6 +1,7 @@
 import React from "react";
 import MainAboutMe from "./MainAboutMe";
 import { useStore } from "../../store/AuthStore";
+import { useTranslation } from "react-i18next";
 
 const AboutMe = () => {
   const { nombre, apellido, edad, lenguajesYTecnologias } = JSON.parse(
@@ -8,6 +9,8 @@ const AboutMe = () => {
   );
 
   const color = useStore((set) => set.color);
+
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -17,6 +20,7 @@ const AboutMe = () => {
         edad={edad}
         lenguajesYTecnologias={lenguajesYTecnologias}
         color={color}
+        t={t}
       />
     </div>
   );
