@@ -5,11 +5,14 @@ import { useForm } from "react-hook-form";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import "../../css/formulario/Formulario.css"
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const color = useStore((state) => state.color);
 
   const MySwal = withReactContent(Swal);
+
+  const {t} = useTranslation()
 
   const {
     register,
@@ -50,13 +53,14 @@ const Contact = () => {
     <div
       className={`fondoCuerpo${color} texto${color} d-flex flex-column align-items-center pt-4 pb-4`}
     >
-      <h2>Formulario para contactarme</h2>
+      <h2>{t("titulo_formulario")}</h2>
       <Formulario
         color={color}
         register={register}
         handleSubmit={handleSubmit}
         errors={errors}
         onSubmit={onSubmit}
+        t={t}
       />
     </div>
   );

@@ -30,7 +30,7 @@ const NavBar = ({
               {nombre} {apellido}
             </h1>
 
-            <h2>Desarrollador Web Mern</h2>
+            <h2>{t("stack_tech")}</h2>
           </div>
         </Col>
         <Col md={8} sm={8} xs={12}>
