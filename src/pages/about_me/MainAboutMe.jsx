@@ -8,7 +8,7 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color,t }) 
         <Col md={6} className="p-0 d-flex align-items-center justify-content-center">
             <Card className="ImagenRedonda" style={{ width: "18rem" }}>
               <Card.Img
-                className="ImagenRedonda"
+                className={`ImagenRedonda imagen${color}`}
                 variant="top"
                 src="../../public/fotoMia.jpg"
               />

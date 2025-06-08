@@ -101,13 +101,6 @@ hr{
 
 
 
-
-.inputOscuro{
- background-color: gray !important;
- border: gray !important;
-
-}
-
 @keyframes aparecer {
     from {
       opacity: 0;

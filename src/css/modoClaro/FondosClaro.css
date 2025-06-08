@@ -6,8 +6,13 @@
   box-shadow: 0px 2px 4px black;
 }
 
+.imagenClaro{
+  box-shadow: 2px 2px 4px black !important;
+}
+
 .fondoCardClaro {
   background-color: white !important;
+  box-shadow: 2px 2px 4px black;
 }
 
 .dropdownClaro .dropdown-menu {
