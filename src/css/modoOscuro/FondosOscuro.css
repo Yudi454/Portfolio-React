@@ -2,25 +2,41 @@
   background: linear-gradient(135deg, #0d1b2a, #1b263b);
 }
 
-.headerOscuro{
-box-shadow: 0 5px 4px gray;
+.headerOscuro {
+  box-shadow: 0 5px 4px gray;
 
+}
+
+.imagenOscuro{
+  box-shadow: 2px 2px 4px white !important;
 }
 
 .fondoCardOscuro {
   background-color: gray !important;
+  box-shadow: 2px 2px 5px white;
 }
 
 .fondoCuerpoOscuro {
   background-color: black;
 }
 
-.dropdownOscuro .dropdown-menu{
-border: solid 3px #1b263b;
-box-shadow: 1px 1px 4px 0px white;
+.inputOscuro {
+  background-color: gray !important;
+  border: gray !important;
+  box-shadow: 1px 1px 5px 1px white;
 }
 
-.dropdownOscuro .dropdown-menu,.dropdownOscuro .dropdown-item{
+.inputClaro{
+  box-shadow: 1px 1px 5px 1px black;
+}
+
+.dropdownOscuro .dropdown-menu {
+  border: solid 3px #1b263b;
+  box-shadow: 1px 1px 4px 0px white;
+}
+
+.dropdownOscuro .dropdown-menu,
+.dropdownOscuro .dropdown-item {
   background: linear-gradient(135deg, #0d1b2a, #1b263b);
 
 }
