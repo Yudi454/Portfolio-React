@@ -10,7 +10,7 @@ const MainAboutMe = ({ nombre, apellido, edad, lenguajesYTecnologias,color,t }) 
               <Card.Img
                 className={`ImagenRedonda imagen${color}`}
                 variant="top"
-                src="../../public/fotoMia.jpg"
+                src="/fotoMia.jpg"
               />
             </Card>
         </Col>
