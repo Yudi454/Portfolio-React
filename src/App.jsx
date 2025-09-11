@@ -8,7 +8,7 @@ import { getDatos } from "./customHooks/UseApi";
 import AboutMe from "./pages/about_me/AboutMe";
 import Contact from "./pages/contact/Contact";
 import Projects from "./pages/projects/Projects";
-import Error404 from "./pages/error404/error404";
+import Error404 from "./pages/error404/Error404";
 import "./language/i18n";
 import "./css/modoClaro/ModoClaro.css";
 import "./css/modoOscuro/ModoOscuro.css";
