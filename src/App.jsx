@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ABOUTME, CONTACT, ERROR, HOME, PROJECTS } from "./routes/Rutas";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getDatos } from "./customHooks/UseApi";
 import AboutMe from "./pages/aboutme/AboutMe";
 import Contact from "./pages/contact/Contact";
@@ -19,13 +19,21 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import "font-awesome/css/font-awesome.min.css";
 
 function App() {
+  const [cargando, setCargando] = useState(true);
+
   useEffect(() => {
-    getDatos();
+    async function fetchDatos() {
+      await getDatos(); // tu función que guarda en localStorage
+      setCargando(false);
+    }
+    fetchDatos();
   }, []);
 
   return (
     <>
-      {localStorage.getItem("datos") != null && (
+      {cargando ? (
+        <div>Cargando...</div>
+      ) : (
         <BrowserRouter>
           <Header />
           <Routes>
@@ -41,5 +49,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
