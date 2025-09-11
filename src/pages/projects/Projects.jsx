@@ -6,7 +6,11 @@ import { useTranslation } from "react-i18next";
 const Projects = () => {
   const color = useStore((state) => state.color);
 
-  const { proyectos } = JSON.parse(localStorage.getItem("datos"));
+  const datos = JSON.parse(localStorage.getItem("datos")) || {};
+  const { proyectos = [] } = datos.datos;
+
+  console.log(datos );
+  
 
   const { t } = useTranslation();
 

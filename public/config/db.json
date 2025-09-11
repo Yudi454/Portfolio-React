@@ -81,6 +81,13 @@
         "titulo": "pagina_drugst",
         "descripcion": "des_drugst",
         "linkFront": "https://github.com/Yudi454/Proyecto-Drugstore"
+      },
+      {
+        "imagen": "https://live.staticflickr.com/65535/54780515841_d5c686a56d_b.jpg",
+        "titulo": "pagina_cancha",
+        "descripcion": "des_cancha",
+        "linkFront": "https://github.com/Yudi454/Pagina_De_Reserva_De_Canchas",
+        "linkBack": "https://github.com/Yudi454/Back_Reserva_De_Canchas"
       }
     ]
   }

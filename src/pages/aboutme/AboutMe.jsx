@@ -4,9 +4,9 @@ import { useStore } from "../../store/AuthStore";
 import { useTranslation } from "react-i18next";
 
 const AboutMe = () => {
-  const { nombre, apellido, edad, lenguajesYTecnologias } = JSON.parse(
-    localStorage.getItem("datos")
-  );
+const datos = JSON.parse(localStorage.getItem("datos")) || {};
+const { nombre, apellido, edad, lenguajesYTecnologias = [] } = datos;
+
 
   const color = useStore((set) => set.color);
 

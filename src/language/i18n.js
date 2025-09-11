@@ -31,6 +31,9 @@ const resources = {
       pagina_drugst: "Drugstore Page",
       des_drugst:
         "Project where I created a website for a drugstore using JS, HTML, and CSS. Includes a complete CRUD.",
+      pagina_cancha: "Court Booking Page",
+      des_cancha:
+        "Project where I created a website for a court reservation system. It includes booking functionality and administration of the entire system. I used React for the frontend and Node with Express for the backend.",
       ir_front: "Go to Frontend",
       ir_back: "Go to Backend",
       titulo_formulario: "Contact Form",
@@ -43,7 +46,7 @@ const resources = {
       asnt_obl: "Subject is required",
       desc_obl: "Description is required",
       email_inv: "Invalid email",
-      enviar: "Send"
+      enviar: "Send",
     },
   },
   es: {
@@ -74,6 +77,9 @@ const resources = {
       pagina_drugst: "Página Drugstore",
       des_drugst:
         "Proyecto donde realice una página web sobre un drugstore con js,html y css. Con un crud completo.",
+      pagina_cancha: "Página de Reserva de Canchas",
+      des_cancha:
+        "Proyecto donde realice una página web sobre un sistema para reservas de canchas, tiene funciones de reserva y admnistracion de todo el sistema, use React para el front y para el back Node y express.",
       ir_front: "Ir al Front",
       ir_back: "Ir al Back",
       titulo_formulario: "Formulario para contactarme",
@@ -86,7 +92,7 @@ const resources = {
       asnt_obl: "El asunto es obligatorio",
       desc_obl: "La descripción es obligatoria",
       email_inv: "Email inválido",
-      enviar: "Enviar"
+      enviar: "Enviar",
     },
   },
 };
