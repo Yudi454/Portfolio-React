@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutMe from '../about_Me/AboutMe'
+import AboutMe from '../aboutme/AboutMe'
 import Projects from '../projects/Projects'
 import Contact from '../contact/Contact'
 

@@ -5,7 +5,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer";
 import { useEffect } from "react";
 import { getDatos } from "./customHooks/UseApi";
-import AboutMe from "./pages/about_me/AboutMe";
+import AboutMe from "./pages/aboutme/AboutMe";
 import Contact from "./pages/contact/Contact";
 import Projects from "./pages/projects/Projects";
 import Error404 from "./pages/error404/Error404";
