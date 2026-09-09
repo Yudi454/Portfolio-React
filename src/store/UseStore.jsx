@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export const useStore = create((set) => ({
-  thema: "oscuro",
+  tema: "oscuro",
 
-  setThema: (thema) => set({ thema }),
+  setTema: (tema) => set({ tema }),
 }));

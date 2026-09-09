@@ -8,7 +8,7 @@ import { Link } from "@/i18n/routing";
 import React from "react";
 
 export const Header = () => {
-  const { thema, setThema } = useStore();
+  const { tema, setTema } = useStore();
   const t = useTranslations("nav");
 
   const locale = useLocale();
@@ -32,36 +32,75 @@ export const Header = () => {
     },
   ];
   return (
-    <header className="flex">
+    <header
+      className={`p-5 shadow-[0px_1px_10px_1px_${
+        tema === "oscuro" ? "white" : "black"
+      }] ${
+        tema === "oscuro" ? "bg-black text-white" : "bg-white text-black"
+      } grid grid-cols-[40%_60%] w-full`}
+    >
+      {/* Datos mios */}
       <div>
         <h1 className="text-4xl font-bold">Lucas Yudi</h1>
         <h2 className="text-3xl">{t("profesion")}</h2>
       </div>
-      <div className="flex gap-5">
+      <div className="flex items-center justify-end w-full gap-5">
+        {/* Links */}
         {links.map((l, i) => (
-          <Link key={i} className="uppercase text-xl" href={l.direccion}>
+          <Link
+            key={i}
+            className="uppercase font-semibold transition-transform duration-100 hover:scale-105 text-xl"
+            href={l.direccion}
+          >
             {l.nombre}
           </Link>
         ))}
-        <div className="relative h-7 w-20 overflow-hidden rounded-xl border border-black bg-linear-to-r   from-slate-950 via-slate-500 to-slate-50">
+
+        {/* Contenedor de cambio de color */}
+        <div
+          className={`relative h-10 w-30 overflow-hidden rounded-xl border transition-colors duration-300 ${
+            tema === "oscuro"
+              ? "border-white/20 bg-zinc-900"
+              : "border-black/50 bg-amber-50"
+          }`}
+        >
+          {/* Track / fondo */}
           <div
-            className={`absolute top-0 h-full w-1/2 rounded-xl transition-all duration-500 ${
-              thema === "oscuro" ? "translate-x-0" : "translate-x-full text-end"
+            className={`absolute inset-0 bg-linear-to-r transition-all duration-500 ${
+              tema === "oscuro"
+                ? "from-zinc-950 via-zinc-800 to-zinc-700"
+                : "from-amber-100 via-orange-50 to-white"
+            }`}
+          />
+
+          {/* Contenedor del icono */}
+          <div
+            className={`absolute flex items-center top-0 h-full w-1/2 rounded-xl transition-all duration-600 ${
+              tema === "oscuro"
+                ? "translate-x-0"
+                : "translate-x-full justify-end"
             }`}
           >
             <FontAwesomeIcon
-              className={`cursor-pointer
-                ${thema === "oscuro" ? "text-[#F8FAFC]" : "text-[#F59E0B]"}
-              `}
+              className={` cursor-pointer text-3xl h-full drop-shadow-sm transition-colors duration-300${
+                tema === "oscuro"
+                  ? "text-sky-200 hover:text-sky-100" // luna más suave y elegante
+                  : "text-amber-500 hover:text-amber-400"
+              }`}
               onClick={() =>
-                thema === "oscuro" ? setThema("claro") : setThema("oscuro")
+                tema === "oscuro" ? setTema("claro") : setTema("oscuro")
               }
-              icon={thema === "oscuro" ? faMoon : faSun}
+              icon={tema === "oscuro" ? faMoon : faSun}
             />
           </div>
         </div>
+        {/* Cambiar lenguaje */}
         <Link href="/" locale={locale === "es" ? "en" : "es"}>
-          {t("idioma")}
+          <span
+            className={`transition-transform duration-100 hover:scale-105 text-4xl fi fi-${
+              locale === "es" ? "es" : "gb"
+            }`}
+          ></span>
         </Link>
       </div>
     </header>
