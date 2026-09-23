@@ -3,6 +3,7 @@
 import React from "react";
 import { Presentacion } from "./presentacion/Presentacion";
 import { useStore } from "@/store/UseStore";
+import { Experiencia } from "./experiencia/Experiencia";
 
 export const Body = () => {
   const { tema, setTema } = useStore();
@@ -14,6 +15,7 @@ export const Body = () => {
       }`}
     >
       <Presentacion />
+      <Experiencia />
     </div>
   );
 };
