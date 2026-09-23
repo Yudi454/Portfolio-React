@@ -33,15 +33,15 @@ export const Header = () => {
   ];
   return (
     <header
-      className={`p-5 shadow-[0px_1px_10px_1px_${
-        tema === "oscuro" ? "white" : "black"
-      }] ${
-        tema === "oscuro" ? "bg-black text-white" : "bg-white text-black"
-      } grid grid-cols-[40%_60%] w-full`}
+      className={`p-5 grid z-1 grid-cols-[40%_60%] w-full ${
+        tema === "oscuro"
+          ? "bg-black text-white shadow-[0px_1px_10px_0px_white]"
+          : "bg-white text-black shadow-[0px_1px_10px_0px_black]"
+      }`}
     >
       {/* Datos mios */}
       <div>
-        <h1 className="text-4xl font-bold">Lucas Yudi</h1>
+        <h2 className="text-4xl font-bold">Lucas Yudi</h2>
         <h2 className="text-3xl">{t("profesion")}</h2>
       </div>
       <div className="flex items-center justify-end w-full gap-5">
@@ -98,7 +98,7 @@ export const Header = () => {
         <Link href="/" locale={locale === "es" ? "en" : "es"}>
           <span
             className={`transition-transform duration-100 hover:scale-105 text-4xl fi fi-${
-              locale === "es" ? "es" : "gb"
+              locale === "es" ? "gb" : "es"
             }`}
           ></span>
         </Link>

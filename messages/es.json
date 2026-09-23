@@ -5,6 +5,9 @@
     "experiencia": "experiencia",
     "proyectos": "proyectos",
     "habilidades": "habilidades",
-    "contacto": "contacto"
+    "contacto": "contacto",
+    "titulo_presentacion": "Desarrollador Full Stack, con foco en Frontend y experiencia creando aplicaciones web de principio a fin.",
+    "descripcion1_presentacion": "Como Técnico Universitario en Programación, desarrollé aplicaciones web utilizando principalmente React.js, Next.js y Tailwind CSS para construir interfaces modernas y responsivas. Participé tanto en proyectos personales como en desarrollos en equipo, incluyendo una aplicación para la Dirección de Agricultura – División Tabaco, donde trabajé en funcionalidades orientadas a la gestión de certificados e inspecciones.",
+    "descripcion2_presentacion": "Además del desarrollo frontend, tengo experiencia con Node.js, Express, MySQL y MongoDB, creando APIs REST, implementando operaciones CRUD y participando en el desarrollo de aplicaciones completas. Esta experiencia me permite comprender el funcionamiento integral de un proyecto y colaborar en todo su ciclo de desarrollo"
   }
 }

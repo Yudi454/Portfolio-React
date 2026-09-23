@@ -5,6 +5,9 @@
     "experiencia": "experience",
     "proyectos": "projects",
     "habilidades": "skills",
-    "contacto": "contact"
+    "contacto": "contact",
+    "titulo_presentacion": "Full Stack Developer, focused on Frontend development with experience building web applications from start to finish.",
+    "descripcion1_presentacion": "As a University Technician in Programming, I have developed web applications mainly using React.js, Next.js, and Tailwind CSS to build modern and responsive interfaces. I have worked on both personal and team projects, including an application for the Directorate of Agriculture – Tobacco Division, where I worked on features focused on certificate and inspection management.",
+    "descripcion2_presentacion": "In addition to frontend development, I have experience with Node.js, Express, MySQL, and MongoDB, building REST APIs, implementing CRUD operations, and contributing to the development of full-stack applications. This experience allows me to understand the overall structure of a project and contribute throughout its entire development lifecycle."
   }
 }
