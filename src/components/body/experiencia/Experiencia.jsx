@@ -123,17 +123,16 @@ export const Experiencia = () => {
                     >
                       {h.nombre}
                     </button>
+
                     <div
-                      className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 border
-                  ${
-                    tema === "claro"
-                      ? "bg-white border-black"
-                      : "bg-black border-white"
-                  } text-sm rounded px-3 py-2
-                  whitespace-nowrap
-                  opacity-0 invisible
-                  group-hover:opacity-100 group-hover:visible
-                  transition-all duration-200`}
+                      className={`absolute top-full mt-2 border sm:w-50 md:w-40 lg:w-max
+        ${tema === "claro" ? "bg-white border-black" : "bg-black border-white"}
+        text-sm rounded px-3 py-2
+       sm:w-30 md:w-40  lg:w-80  text-center whitespace-normal wrap-break-word
+        opacity-0 invisible
+        group-hover:opacity-100 group-hover:visible
+        transition-all duration-200 z-10
+        ${i >= 7 ? "right-0" : "left-1/2 -translate-x-1/2"}`}
                     >
                       {h.descripcion}
                     </div>

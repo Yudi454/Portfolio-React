@@ -36,13 +36,13 @@ export const Proyectos = () => {
                   {h.nombre}
                 </button>
                 <div
-                  className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 border
+                  className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 sm:w-100 md:w-max lg:w-max border
                   ${
                     tema === "claro"
                       ? "bg-white border-black"
                       : "bg-black border-white"
                   } text-sm rounded px-3 py-2
-                  whitespace-nowrap
+                  lg:whitespace-nowrap
                   opacity-0 invisible
                   group-hover:opacity-100 group-hover:visible
                   transition-all duration-200`}
