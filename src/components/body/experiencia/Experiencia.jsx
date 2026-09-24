@@ -103,7 +103,7 @@ export const Experiencia = () => {
       {trabajos.map((t, i) => (
         <div key={i} className="p-5">
           <div className="grid grid-cols-[20%_80%]">
-            <div className="flex flex-col  items-center">
+            <div className="flex flex-col items-center">
               <p>{t.periodo}</p>
               <p className="mt-2">{t.direccion}</p>
             </div>
