@@ -5,10 +5,12 @@ export const contactos = [
   {
     nombre: "Gmail",
     icono: faEnvelope,
+    link: "",
   },
   {
     nombre: "LinkedIn",
     icono: faLinkedinIn,
+    link: "",
   },
-  { nombre: "GitHub", icono: faGithub },
+  { nombre: "GitHub", icono: faGithub, link: "" },
 ];

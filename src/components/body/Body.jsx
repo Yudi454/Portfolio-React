@@ -4,8 +4,8 @@ import React from "react";
 import { Presentacion } from "./presentacion/Presentacion";
 import { useStore } from "@/store/UseStore";
 import { Experiencia } from "./experiencia/Experiencia";
-import { Proyectos } from "./proyectos/Proyectos";
-import { Habilidades } from "./habilidades/Habilidades";
+import { Proyectos } from "./proyectos/Proyectos.jsx";
+import { Habilidades } from "./habilidades/Habilidades.jsx";
 import { Contacto } from "./contacto/Contacto";
 
 export const Body = () => {

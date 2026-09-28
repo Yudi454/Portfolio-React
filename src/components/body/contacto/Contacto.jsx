@@ -1,6 +1,5 @@
 import { useStore } from "@/store/UseStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { contactos } from "./contactos";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,28 +35,13 @@ export const Contacto = () => {
   };
 
   return (
-    <>
+    <div className="mb-5">
       <div>
         <h2 className="text-4xl font-bold ms-5">Contacto</h2>
         <p className="text-xl font-semibold ms-5">
           ¿Tenés una oportunidad laboral o un proyecto? Estoy disponible para
           colaborar.
         </p>
-      </div>
-      <div className="flex justify-center items-center mt-5 mb-5">
-        {contactos.map((c, i) => (
-          <button
-            key={i}
-            className={`border ${
-              tema === "claro"
-                ? "bg-white border-black"
-                : "bg-black border-white"
-            } rounded-xl px-5 py-2 me-2 transition-transform duration-300 hover:scale-101 text-center`}
-          >
-            {c.nombre}
-            <FontAwesomeIcon className="" icon={c.icono} />
-          </button>
-        ))}
       </div>
       <div className="flex flex-col justify-center items-center gap gap-5">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -110,6 +94,6 @@ export const Contacto = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };

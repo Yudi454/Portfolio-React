@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import React from "react";
+import { links } from "./links";
 
 export const Header = () => {
   const { tema, setTema } = useStore();
@@ -13,24 +14,6 @@ export const Header = () => {
 
   const locale = useLocale();
 
-  const links = [
-    {
-      nombre: t("experiencia"),
-      direccion: "#experiencia",
-    },
-    {
-      nombre: t("proyectos"),
-      direccion: "#proyectos",
-    },
-    {
-      nombre: t("habilidades"),
-      direccion: "#habilidades",
-    },
-    {
-      nombre: t("contacto"),
-      direccion: "#contacto",
-    },
-  ];
   return (
     <header
       className={`p-5 grid z-1 grid-cols-[40%_60%] w-full ${
@@ -52,7 +35,7 @@ export const Header = () => {
             className="uppercase font-semibold transition-transform duration-100 hover:scale-105 text-xl"
             href={l.direccion}
           >
-            {l.nombre}
+            {t(l.nombre)}
           </Link>
         ))}
 
