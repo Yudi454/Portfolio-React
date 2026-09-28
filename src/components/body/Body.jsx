@@ -6,6 +6,7 @@ import { useStore } from "@/store/UseStore";
 import { Experiencia } from "./experiencia/Experiencia";
 import { Proyectos } from "./proyectos/Proyectos";
 import { Habilidades } from "./habilidades/Habilidades";
+import { Contacto } from "./contacto/Contacto";
 
 export const Body = () => {
   const { tema, setTema } = useStore();
@@ -20,6 +21,7 @@ export const Body = () => {
       <Experiencia />
       <Proyectos />
       <Habilidades />
+      <Contacto />
     </div>
   );
 };
