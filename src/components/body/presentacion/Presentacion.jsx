@@ -9,7 +9,7 @@ export const Presentacion = () => {
   const [ver, setVer] = useState(false);
 
   const locale = useLocale();
-  const t = useTranslations("nav");
+  const t = useTranslations("presentacion");
 
   const cvEspanol = process.env.NEXT_PUBLIC_CV_ESPANOL;
   const cvIngles = process.env.NEXT_PUBLIC_CV_INGLES;
@@ -29,7 +29,7 @@ export const Presentacion = () => {
             setVer(true);
           }}
         >
-          Ver Cv
+          {t("ver_cv")}
         </button>
         <button
           className={`border ${
@@ -38,7 +38,7 @@ export const Presentacion = () => {
           href={locale === "es" ? cvEspanol : cvIngles}
           download
         >
-          Descargar Cv
+          {t("descargar_cv")}
         </button>
       </div>
       <p className="mt-5">Tucumán, Argentina</p>

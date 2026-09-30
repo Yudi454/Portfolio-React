@@ -1,13 +1,89 @@
 {
-  "nav": {
+  "global": {
     "profesion": "University Technician in Programming",
-    "idioma": "Spanish",
     "experiencia": "experience",
     "proyectos": "projects",
     "habilidades": "skills",
-    "contacto": "contact",
+    "contacto": "contact"
+  },
+  "presentacion": {
     "titulo_presentacion": "Full Stack Developer, focused on Frontend development with experience building web applications from start to finish.",
-    "descripcion1_presentacion": "As a University Technician in Programming, I have developed web applications mainly using React.js, Next.js, and Tailwind CSS to build modern and responsive interfaces. I have worked on both personal and team projects, including an application for the Directorate of Agriculture – Tobacco Division, where I worked on features focused on certificate and inspection management.",
-    "descripcion2_presentacion": "In addition to frontend development, I have experience with Node.js, Express, MySQL, and MongoDB, building REST APIs, implementing CRUD operations, and contributing to the development of full-stack applications. This experience allows me to understand the overall structure of a project and contribute throughout its entire development lifecycle."
+    "descripcion1_presentacion": "As a University Technician in Programming, I have developed web applications mainly using React.js, Next.js, and Tailwind CSS to build modern and responsive interfaces. I have participated in both personal and team projects, including an application for the Directorate of Agriculture – Tobacco Division, where I worked on features focused on certificate and inspection management.",
+    "descripcion2_presentacion": "In addition to frontend development, I have experience with Node.js, Express, MySQL, and MongoDB, building REST APIs, implementing CRUD operations, and contributing to the development of full-stack applications. This experience allows me to understand the overall structure of a project and contribute throughout its entire development lifecycle.",
+    "ver_cv": "View CV",
+    "descargar_cv": "Download CV"
+  },
+  "habilidades": {
+    "lenguajes": "Languages",
+    "dbs": "Databases",
+    "herramientas": "Tools",
+    "metodologias": "Methodologies",
+    "back": "Back-End",
+    "front": "Front-End"
+  },
+  "footer": {
+    "contactos": "Contacts",
+    "navegacion": "Navigation"
+  },
+  "contacto": {
+    "subtitulo_contacto": "Do you have a job opportunity or a project? I am available to collaborate.",
+    "nombre_contacto": "Name",
+    "email_contacto": "Email",
+    "mensaje_contacto": "Message",
+    "enviar_contacto": "Send Message"
+  },
+  "schema": {
+    "min_nombre": "The name must be at least 2 characters long",
+    "max_nombre": "The name is too long",
+    "required_email": "Enter a valid email address",
+    "min_email": "The email must be at least 5 characters long",
+    "max_email": "The email is too long",
+    "min_mensaje": "The message must be at least 10 characters long",
+    "max_mensaje": "The message cannot exceed 1000 characters"
+  },
+  "experiencia": {
+    "puesto_tabaco": "Full Stack Developer — Freelancer",
+    "lugar_tabaco": "Directorate of Agriculture (Tobacco Division)",
+    "descripcion_tabaco": "I developed a web application as part of a team for the Directorate of Agriculture – Tobacco Division, designed to manage certificates for companies and agricultural advisors who handle agrochemicals. The system was built with React.js (front-end), Node.js + Express (back-end), and MySQL Workbench (database). It includes a registration module where applicants can upload information and PDF documents, download certificates, and view inspections, with or without fines. We also implemented an employee module that allows staff to manage companies and advisors, validate documentation, and generate inspections.",
+
+    "puesto_doctor": "Frontend Developer — Freelancer",
+    "lugar_doctor": "Professional website for Dr. Franco Fagetti – Urologist",
+    "descripcion_doctor": "I independently developed a professional website for a urologist using Next.js, React.js, and Tailwind CSS. I implemented a responsive design, reusable components, section navigation, map integration, and contact links. The project allowed me to deepen my knowledge of JavaScript and React.js and gain experience with Next.js, Tailwind CSS, SEO, web optimization, and scroll libraries."
+  },
+
+  "proyectos": {
+    "titulo_restaurante": "Restaurant Reservation Management System",
+    "descripcion_restaurante": "I developed a web application for managing restaurant table reservations, allowing users to choose a date, time, and number of people. I used React.js for the front-end, Node.js with Express for the back-end, and MongoDB as a NoSQL database to store reservations and system configurations. I implemented complete CRUD operations, validations, and a user-focused interface.",
+    "titulo_canchas": "Sports Court Reservation System",
+    "descripcion_canchas": "I developed a web application for booking sports courts, implementing a complete CRUD system to manage reservations, users, and schedules. I used React.js on the front-end to create a dynamic and responsive interface, Node.js and Express on the back-end to handle requests and server-side logic, and MySQL as the database to store information securely and efficiently.",
+    "titulo_drugstore": "Drugstore Project",
+    "descripcion_drugstore": "I built a web interface for a drugstore focused on displaying products and categories, along with a simulated purchasing process. The development was carried out entirely on the front-end using React.js, implementing state management, product filtering, a simulated shopping cart, and a responsive design adaptable to different devices.",
+    "titulo_e_commerce": "E-commerce Website",
+    "descripcion_e_commerce": "I developed an E-commerce website using HTML, CSS, and JavaScript. I implemented a complete CRUD system to manage the application's main information and functionalities, along with an interface focused on product presentation and management.",
+    "titulo_disney": "Disney Plus Website",
+    "descripcion_disney": "I recreated the visual interface of the Disney Plus platform using HTML and CSS, aiming to reproduce its structure, content layout, and visual design through a responsive interface."
+  },
+
+  "descripciones_generales": {
+    "descripcion_react": "Library for creating dynamic and reusable web interfaces.",
+    "descripcion_node": "Runtime environment for developing server-side applications and services.",
+    "descripcion_express": "Framework for creating APIs and web applications with Node.js.",
+    "descripcion_zustand": "Lightweight library for managing global state in React applications.",
+    "descripcion_js": "Programming language for developing interactive web applications.",
+    "descripcion_api": "Architecture for communication between applications through HTTP.",
+    "descripcion_axios": "HTTP client for making requests and consuming APIs.",
+    "descripcion_git_github": "Version control and collaboration for software projects.",
+    "descripcion_next": "React framework for developing modern and optimized web applications.",
+    "descripcion_tailwind": "CSS framework for quickly and consistently creating custom interfaces.",
+    "descripcion_responsive": "Design that adapts to different devices and screen sizes.",
+    "descripcion_mongo": "NoSQL database used to store system information.",
+    "descripcion_mysql": "Relational database used to store users, reservations, and schedules.",
+    "descripcion_html": "Language used to structure application content.",
+    "descripcion_css": "Used to design and style the interface.",
+    "descripcion_java": "Programming language used to develop applications and systems.",
+    "descripcion_C#": "Programming language used to develop applications within the .NET ecosystem.",
+    "descripcion_git": "Version control system for managing the history of changes in projects.",
+    "descripcion_github": "Platform for hosting repositories, collaborating on projects, and managing versions with Git.",
+    "descripcion_scrum": "Agile methodology used to organize collaborative work and iterative project development."
   }
 }

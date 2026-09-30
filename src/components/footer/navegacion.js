@@ -1,18 +1,18 @@
 export const navegacion = [
   {
-    nombre: "Experiencia",
+    nombre: "experiencia",
     link: "#experiencia",
   },
   {
-    nombre: "Proyectos",
+    nombre: "proyectos",
     link: "#proyectos",
   },
   {
-    nombre: "Habilidades",
+    nombre: "habilidades",
     link: "#habilidades",
   },
   {
-    nombre: "Contacto",
+    nombre: "contacto",
     link: "#contacto",
   },
 ];

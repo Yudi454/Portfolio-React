@@ -1,128 +1,107 @@
 export const proyectos = [
   {
     link: "https://live.staticflickr.com/65535/54570336787_5f0dd14902_b.jpg",
-    titulo: "Sistema de Gestión de Reservas para Restaurante",
-    descripcion:
-      "Desarrollé una aplicación web para gestionar reservas de mesas en un restaurante, permitiendo a los usuarios elegir fecha, horario y cantidad de personas. Utilicé React.js para el desarrollo del front-end, Node.js junto con Express para el back-end y MongoDB como base de datos NoSQL para almacenar las reservas y configuraciones del sistema. Implementé operaciones CRUD completas, validaciones y una interfaz centrada en la experiencia del usuario.",
+    titulo: "titulo_restaurante",
+    descripcion: "descripcion_restaurante",
     herramientas: [
       {
         nombre: "React",
-        descripcion:
-          "Biblioteca de JavaScript para el desarrollo del front-end.",
+        descripcion: "descripcion_react",
       },
       {
         nombre: "Node.js",
-        descripcion:
-          "Entorno de ejecución utilizado para el desarrollo del back-end.",
+        descripcion: "descripcion_node",
       },
       {
         nombre: "Express",
-        descripcion:
-          "Framework utilizado para crear la API y gestionar las solicitudes del servidor.",
+        descripcion: "descripcion_express",
       },
       {
         nombre: "MongoDB",
-        descripcion:
-          "Base de datos NoSQL utilizada para almacenar la información del sistema.",
+        descripcion: "descripcion_mongo",
       },
     ],
   },
 
   {
     link: "https://live.staticflickr.com/65535/54780515841_d5c686a56d_b.jpg",
-    titulo: "Sistema de Reserva de Canchas",
-    descripcion:
-      "Desarrollé una aplicación web para reservar canchas deportivas, implementando un sistema CRUD completo para gestionar reservas, usuarios y horarios. Utilicé React.js en el front-end para crear una interfaz dinámica y responsiva, Node.js y Express en el back-end para gestionar las solicitudes y la lógica del servidor, y MySQL como base de datos para almacenar la información de manera segura y eficiente.",
+    titulo: "titulo_canchas",
+    descripcion: "descripcion_canchas",
     herramientas: [
       {
         nombre: "React",
-        descripcion:
-          "Biblioteca de JavaScript utilizada para desarrollar la interfaz de usuario.",
+        descripcion: "descripcion_react",
       },
       {
         nombre: "Node.js",
-        descripcion:
-          "Entorno de ejecución utilizado para desarrollar el back-end.",
+        descripcion: "descripcion_node",
       },
       {
         nombre: "Express",
-        descripcion:
-          "Framework utilizado para gestionar la API y las solicitudes del servidor.",
+        descripcion: "descripcion_express",
       },
       {
         nombre: "MySQL",
-        descripcion:
-          "Base de datos relacional utilizada para almacenar usuarios, reservas y horarios.",
+        descripcion: "descripcion_mysql",
       },
     ],
   },
 
   {
     link: "https://live.staticflickr.com/65535/54571431133_3746c549ae_b.jpg",
-    titulo: "Proyecto Drugstore",
-    descripcion:
-      "Construí una interfaz web para una drugstore enfocada en la visualización de productos y categorías, junto con una simulación del proceso de compra. El desarrollo se realizó completamente en el front-end utilizando React.js, implementando manejo de estados, filtrado de productos, carrito de compras simulado y un diseño responsive adaptable a distintos dispositivos.",
+    titulo: "titulo_drugstore",
+    descripcion: "descripcion_drugstore",
     herramientas: [
       {
         nombre: "React",
-        descripcion:
-          "Biblioteca de JavaScript utilizada para desarrollar la interfaz y gestionar los estados.",
+        descripcion: "descripcion_react",
       },
       {
         nombre: "JavaScript",
-        descripcion:
-          "Lenguaje utilizado para implementar la lógica y funcionalidades de la aplicación.",
+        descripcion: "descripcion_js",
       },
       {
         nombre: "Responsive Design",
-        descripcion:
-          "Diseño adaptable a diferentes tamaños de pantalla y dispositivos.",
+        descripcion: "descripcion_responsive",
       },
     ],
   },
 
   {
     link: "https://live.staticflickr.com/65535/54570336762_d61bfee2c0_b.jpg",
-    titulo: "Página E-commerce",
-    descripcion:
-      "Desarrollé una página web de tipo E-commerce utilizando HTML, CSS y JavaScript. Implementé un sistema CRUD completo para gestionar la información y funcionalidades principales de la aplicación, junto con una interfaz orientada a la presentación y gestión de productos.",
+    titulo: "titulo_e_commerce",
+    descripcion: "descripcion_e_commerce",
     herramientas: [
       {
         nombre: "HTML",
-        descripcion:
-          "Lenguaje utilizado para estructurar el contenido de la aplicación.",
+        descripcion: "descripcion_html",
       },
       {
         nombre: "CSS",
-        descripcion: "Utilizado para diseñar y dar estilo a la interfaz.",
+        descripcion: "descripcion_css",
       },
       {
         nombre: "JavaScript",
-        descripcion:
-          "Utilizado para implementar la lógica y las funcionalidades dinámicas.",
+        descripcion: "descripcion_js",
       },
     ],
   },
-
   {
     link: "https://live.staticflickr.com/65535/54571529820_26b6f81cf9_b.jpg",
-    titulo: "Página Disney Plus",
-    descripcion:
-      "Recreé la interfaz visual de la plataforma Disney Plus utilizando HTML y CSS, buscando reproducir su estructura, distribución de contenidos y diseño visual mediante una interfaz responsive.",
+    titulo: "titulo_disney",
+    descripcion: "descripcion_disney",
     herramientas: [
       {
         nombre: "HTML",
-        descripcion: "Lenguaje utilizado para estructurar la página web.",
+        descripcion: "descripcion_html",
       },
       {
         nombre: "CSS",
-        descripcion:
-          "Utilizado para recrear el diseño, distribución y estilos de la interfaz.",
+        descripcion: "descripcion_css",
       },
       {
         nombre: "Responsive Design",
-        descripcion:
-          "Adaptación de la interfaz a diferentes tamaños de pantalla.",
+        descripcion: "descripcion_responsive",
       },
     ],
   },

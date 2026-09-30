@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req) {
   try {
-    const { nombre, email, contenido } = await req.json();
+    const { nombre, email, mensaje } = await req.json();
 
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev", //Despues cambiar a gmail de contacto
@@ -15,7 +15,7 @@ export async function POST(req) {
         <p><strong>Nombre:</strong> ${nombre}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Mensaje:</strong></p>
-        <p>${contenido}</p>
+        <p>${mensaje}</p>
       `,
     });
 

@@ -1,101 +1,87 @@
 export const habilidades = [
   {
-    titulo: "Lenguajes",
+    titulo: "lenguajes",
     tecnologias: [
       {
         nombre: "JavaScript",
-        descripcion:
-          "Lenguaje de programación utilizado para desarrollar aplicaciones web dinámicas tanto en el front-end como en el back-end.",
+        descripcion: "descripcion_js",
       },
       {
         nombre: "Java",
-        descripcion:
-          "Lenguaje de programación orientado a objetos utilizado para el desarrollo de aplicaciones y sistemas.",
+        descripcion: "descripcion_java",
       },
       {
         nombre: "C#",
-        descripcion:
-          "Lenguaje de programación orientado a objetos utilizado para el desarrollo de aplicaciones sobre el ecosistema .NET.",
+        descripcion: "descripcion_C#",
       },
     ],
   },
   {
-    titulo: "Back-end",
+    titulo: "back",
     tecnologias: [
       {
         nombre: "Node.js",
-        descripcion:
-          "Entorno de ejecución de JavaScript utilizado para desarrollar aplicaciones del lado del servidor.",
+        descripcion: "descripcion_node",
       },
       {
         nombre: "Express",
-        descripcion:
-          "Framework para Node.js utilizado para crear APIs REST y aplicaciones web de forma eficiente.",
+        descripcion: "descripcion_express",
       },
     ],
   },
   {
-    titulo: "Front-end",
+    titulo: "front",
     tecnologias: [
       {
         nombre: "React.js",
-        descripcion:
-          "Biblioteca de JavaScript para construir interfaces de usuario interactivas y reutilizables.",
+        descripcion: "descripcion_react",
       },
       {
         nombre: "Next.js",
-        descripcion:
-          "Framework de React utilizado para crear aplicaciones web modernas con renderizado optimizado.",
+        descripcion: "descripcion_next",
       },
       {
         nombre: "Tailwind CSS",
-        descripcion:
-          "Framework CSS basado en clases utilitarias para desarrollar interfaces responsivas de forma rápida.",
+        descripcion: "descripcion_tailwind",
       },
     ],
   },
   {
-    titulo: "Bases de datos",
+    titulo: "dbs",
     tecnologias: [
       {
         nombre: "MySQL",
-        descripcion:
-          "Sistema de gestión de bases de datos relacional utilizado para almacenar información estructurada.",
+        descripcion: "descripcion_mysql",
       },
       {
         nombre: "MongoDB",
-        descripcion:
-          "Base de datos NoSQL orientada a documentos para almacenar información de forma flexible.",
+        descripcion: "descripcion_mongo",
       },
     ],
   },
   {
-    titulo: "Herramientas",
+    titulo: "herramientas",
     tecnologias: [
       {
         nombre: "Git",
-        descripcion:
-          "Sistema de control de versiones para gestionar el historial de cambios en proyectos.",
+        descripcion: "descripcion_git",
       },
       {
         nombre: "GitHub",
-        descripcion:
-          "Plataforma para alojar repositorios, colaborar en proyectos y gestionar versiones con Git.",
+        descripcion: "descripcion_github",
       },
       {
         nombre: "REST API",
-        descripcion:
-          "Arquitectura utilizada para diseñar e integrar servicios web mediante solicitudes HTTP.",
+        descripcion: "descripcion_api",
       },
     ],
   },
   {
-    titulo: "Metodologías",
+    titulo: "metodologias",
     tecnologias: [
       {
         nombre: "SCRUM",
-        descripcion:
-          "Metodología ágil utilizada para organizar el trabajo colaborativo y el desarrollo iterativo de proyectos.",
+        descripcion: "descripcion_scrum",
       },
     ],
   },

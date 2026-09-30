@@ -10,7 +10,7 @@ import { links } from "./links";
 
 export const Header = () => {
   const { tema, setTema } = useStore();
-  const t = useTranslations("nav");
+  const t = useTranslations("global");
 
   const locale = useLocale();
 
