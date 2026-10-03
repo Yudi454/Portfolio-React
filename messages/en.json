@@ -42,11 +42,11 @@
     "max_mensaje": "The message cannot exceed 1000 characters"
   },
   "experiencia": {
-    "puesto_tabaco": "Full Stack Developer — Freelancer",
+    "freelancer": "Freelancer",
+    "puesto_tabaco": "Full Stack Developer",
     "lugar_tabaco": "Directorate of Agriculture (Tobacco Division)",
     "descripcion_tabaco": "I developed a web application as part of a team for the Directorate of Agriculture – Tobacco Division, designed to manage certificates for companies and agricultural advisors who handle agrochemicals. The system was built with React.js (front-end), Node.js + Express (back-end), and MySQL Workbench (database). It includes a registration module where applicants can upload information and PDF documents, download certificates, and view inspections, with or without fines. We also implemented an employee module that allows staff to manage companies and advisors, validate documentation, and generate inspections.",
-
-    "puesto_doctor": "Frontend Developer — Freelancer",
+    "puesto_doctor": "Frontend Developer",
     "lugar_doctor": "Professional website for Dr. Franco Fagetti – Urologist",
     "descripcion_doctor": "I independently developed a professional website for a urologist using Next.js, React.js, and Tailwind CSS. I implemented a responsive design, reusable components, section navigation, map integration, and contact links. The project allowed me to deepen my knowledge of JavaScript and React.js and gain experience with Next.js, Tailwind CSS, SEO, web optimization, and scroll libraries."
   },

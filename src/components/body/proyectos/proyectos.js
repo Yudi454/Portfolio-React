@@ -57,11 +57,11 @@ export const proyectos = [
         descripcion: "descripcion_react",
       },
       {
-        nombre: "JavaScript",
+        nombre: "Js",
         descripcion: "descripcion_js",
       },
       {
-        nombre: "Responsive Design",
+        nombre: "Responsive",
         descripcion: "descripcion_responsive",
       },
     ],
@@ -100,7 +100,7 @@ export const proyectos = [
         descripcion: "descripcion_css",
       },
       {
-        nombre: "Responsive Design",
+        nombre: "Responsive",
         descripcion: "descripcion_responsive",
       },
     ],

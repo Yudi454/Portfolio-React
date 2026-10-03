@@ -15,7 +15,7 @@ export const Presentacion = () => {
   const cvIngles = process.env.NEXT_PUBLIC_CV_INGLES;
 
   return (
-    <article className="p-5 ">
+    <article className="mt-5 md:mt-0 md:p-5 flex flex-col justify-center md:justify-start items-center md:items-start text-center  md:text-start ">
       <h1 className="text-4xl font-bold w-[90%]">{t("titulo_presentacion")}</h1>
       <p className="text-xl w-[80%] mt-5">{t("descripcion1_presentacion")}</p>
       <br />
@@ -43,16 +43,12 @@ export const Presentacion = () => {
       </div>
       <p className="mt-5">Tucumán, Argentina</p>
 
-      <div className={`${ver ? "" : "hidden"} fixed inset-0 z-50 p-10`}>
-        <div className="absolute -z-1 inset-0 bg-black/60"></div>
-        <div className=" border border-black rounded-2xl overflow-hidden h-full flex flex-col">
-          <div className="bg-white flex justify-end ">
-            <button
-              onClick={() => {
-                setVer(false);
-              }}
-              className=" me-5"
-            >
+      <div className={`${ver ? "" : "hidden"} fixed inset-0 z-50 p-2 md:p-10`}>
+        <div className="absolute inset-0 -z-10 bg-black/60"></div>
+
+        <div className="relative border border-black rounded-2xl overflow-hidden h-full flex flex-col">
+          <div className="bg-white flex justify-end">
+            <button onClick={() => setVer(false)} className="me-5">
               X
             </button>
           </div>
@@ -60,7 +56,7 @@ export const Presentacion = () => {
           <iframe
             src={locale === "es" ? cvEspanol : cvIngles}
             title="Cv"
-            className=" w-full h-full"
+            className="w-full h-full"
           />
         </div>
       </div>

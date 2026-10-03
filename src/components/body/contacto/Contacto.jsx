@@ -38,12 +38,12 @@ export const Contacto = () => {
   };
 
   return (
-    <div className="mb-5">
+    <div className="mb-10 mt-5 text-center md:text-start">
       <div>
-        <h2 className="capitalize text-4xl font-bold ms-5">
+        <h2 className="capitalize text-4xl font-bold md:ms-5">
           {t("global.contacto")}
         </h2>
-        <p className="text-xl font-semibold ms-5">
+        <p className="text-xl font-semibold mt-2 md:mt-0 mb-4 md:mb-0 md:ms-5">
           {t("contacto.subtitulo_contacto")}
         </p>
       </div>
@@ -91,7 +91,7 @@ export const Contacto = () => {
                 tema === "claro"
                   ? "bg-white border-black"
                   : "bg-black border-white"
-              } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300 me-5`}
+              } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300`}
             >
               {t("contacto.enviar_contacto")}
             </button>

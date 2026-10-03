@@ -15,13 +15,13 @@ export const Footer = () => {
 
   return (
     <footer
-      className={`p-5 grid grid-cols-3  ${
+      className={`p-5 text-center md:text-start grid md:grid-cols-3 gap-5  ${
         tema === "oscuro"
           ? "bg-black text-white shadow-[0px_1px_10px_0px_white]"
           : "bg-white text-black shadow-[0px_1px_10px_0px_black]"
       } `}
     >
-      <div className="ms-3">
+      <div className="md:ms-3">
         <h2 className="text-3xl font-bold">Lucas Yudi</h2>
         <h3 className="text-2xl">{t("global.profesion")}</h3>
       </div>

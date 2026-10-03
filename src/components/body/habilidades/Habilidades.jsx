@@ -8,12 +8,12 @@ export const Habilidades = () => {
 
   return (
     <>
-      <div>
-        <h2 className="capitalize text-4xl font-bold ms-5">
+      <div className="text-center md:text-start">
+        <h2 className="capitalize text-4xl font-bold md:ms-5">
           {t("global.habilidades")}
         </h2>
       </div>
-      <div className="grid grid-cols-3 p-5 text-center gap gap-5">
+      <div className="grid md:grid-cols-3 gap gap-y-5 p-5 text-center md:gap-5">
         {habilidades.map((h, i) => (
           <div key={i}>
             <h3 className=" text-3xl">{t(`habilidades.${h.titulo}`)}</h3>

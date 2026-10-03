@@ -42,10 +42,11 @@
     "max_mensaje": "El mensaje no puede superar los 1000 caracteres"
   },
   "experiencia": {
-    "puesto_tabaco": "Desarrollador Full Stack — Freelancer",
+    "freelancer": "Freelancer",
+    "puesto_tabaco": "Desarrollador Full Stack",
     "lugar_tabaco": "Dirección de Agricultura (División Tabaco)",
     "descripcion_tabaco": "Desarrollé en equipo una aplicación web para la Dirección de Agricultura – División Tabaco, destinada a administrar certificados para empresas y asesores que manejan agroquímicos. El sistema fue construido con React.js (front-end), Node.js + Express (back-end) y MySQL Workbench (base de datos). Incluye un módulo de inscripción donde los solicitantes pueden cargar información y documentos PDF, descargar certificados y visualizar inspecciones realizadas, con o sin multas. También implementamos un módulo para empleados, que permite gestionar empresas y asesores, validar documentación y generar inspecciones.",
-    "puesto_doctor": "Frontend Developer — Freelancer",
+    "puesto_doctor": "Frontend Developer",
     "lugar_doctor": "Sitio web profesional para Dr. Franco Fagetti – Urólogo",
     "descripcion_doctor": "Desarrollé de forma independiente un sitio web profesional para un médico urólogo utilizando Next.js, React.js y Tailwind CSS. Implementé un diseño responsive, componentes reutilizables, navegación entre secciones, integración de mapas y enlaces de contacto. El proyecto me permitió profundizar mis conocimientos de JavaScript y React.js y adquirir experiencia con Next.js, Tailwind CSS, SEO, optimización web y librerías de scroll."
   },
