@@ -7,7 +7,7 @@ export const Habilidades = () => {
   const t = useTranslations();
 
   return (
-    <>
+    <div id="habilidades" className="scroll-mt-30">
       <div className="text-center md:text-start">
         <h2 className="capitalize text-4xl font-bold md:ms-5">
           {t("global.habilidades")}
@@ -48,6 +48,6 @@ export const Habilidades = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };

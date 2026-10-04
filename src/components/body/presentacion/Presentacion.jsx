@@ -1,10 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
 import { useStore } from "@/store/UseStore";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 export const Presentacion = () => {
+  const CvViewer = dynamic(() => import("@/hooks/pdf/CvViewer"), {
+    ssr: false,
+  });
   const { tema, setTema } = useStore();
   const [ver, setVer] = useState(false);
 
@@ -27,6 +32,7 @@ export const Presentacion = () => {
           } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300 me-5`}
           onClick={() => {
             setVer(true);
+            document.body.style.overflow = "hidden";
           }}
         >
           {t("ver_cv")}
@@ -46,18 +52,21 @@ export const Presentacion = () => {
       <div className={`${ver ? "" : "hidden"} fixed inset-0 z-50 p-2 md:p-10`}>
         <div className="absolute inset-0 -z-10 bg-black/60"></div>
 
-        <div className="relative border border-black rounded-2xl overflow-hidden h-full flex flex-col">
-          <div className="bg-white flex justify-end">
-            <button onClick={() => setVer(false)} className="me-5">
+        <div className="relative border border-black rounded-2xl z-50 overflow-hidden h-full flex flex-col">
+          <div className="bg-white flex justify-end h-10 shrink-0">
+            <button
+              onClick={() => {
+                setVer(false), (document.body.style.overflow = "");
+              }}
+              className="me-5 text-black text-xl font-bolds"
+            >
               X
             </button>
           </div>
 
-          <iframe
-            src={locale === "es" ? cvEspanol : cvIngles}
-            title="Cv"
-            className="w-full h-full"
-          />
+          <div className="flex-1 min-h-0">
+            <CvViewer pdf={locale === "es" ? cvEspanol : cvIngles} />
+          </div>
         </div>
       </div>
     </article>

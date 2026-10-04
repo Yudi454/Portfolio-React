@@ -9,7 +9,7 @@ export const Proyectos = () => {
   const t = useTranslations();
 
   return (
-    <div className="text-center md:text-start">
+    <div id="proyectos" className="scroll-mt-30 text-center md:text-start">
       <div>
         <h2 className="text-4xl capitalize font-bold ms-5">
           {t("global.proyectos")}

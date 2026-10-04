@@ -38,7 +38,7 @@ export const Contacto = () => {
   };
 
   return (
-    <div className="mb-10 mt-5 text-center md:text-start">
+    <div id="contacto" className="scroll-mt-30 mb-10 mt-5 text-center md:text-start">
       <div>
         <h2 className="capitalize text-4xl font-bold md:ms-5">
           {t("global.contacto")}

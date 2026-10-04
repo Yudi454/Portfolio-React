@@ -8,7 +8,7 @@ export const Experiencia = () => {
   const t = useTranslations();
 
   return (
-    <div className="mt-5 md:mt-0 flex flex-col justify-center md:justify-start items-center md:items-start text-center md:text-start">
+    <div id="experiencia" className="scroll-mt-30 mt-5 md:mt-0 flex flex-col justify-center md:justify-start items-center md:items-start text-center md:text-start">
       <div className="">
         <h2 className="capitalize text-4xl font-bold ms-5">
           {t("global.experiencia")}

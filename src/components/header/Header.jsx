@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`p-5 grid z-1 md:grid-cols-[40%_60%] w-full ${
+      className={`sticky top-0 p-5 grid z-1 md:grid-cols-[40%_60%] w-full ${
         tema === "oscuro"
           ? "bg-black text-white shadow-[0px_1px_10px_0px_white]"
           : "bg-white text-black shadow-[0px_1px_10px_0px_black]"
@@ -54,8 +54,14 @@ export const Header = () => {
           {links.map((l, i) => (
             <Link
               key={i}
-              className="uppercase font-semibold transition-transform duration-100 hover:scale-105 text-xl"
               href={l.direccion}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById(l.direccion.substring(1))
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="uppercase font-semibold transition-transform duration-100 hover:scale-105 text-xl"
             >
               {t(l.nombre)}
             </Link>

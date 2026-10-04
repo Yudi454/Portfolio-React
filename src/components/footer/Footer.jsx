@@ -29,10 +29,15 @@ export const Footer = () => {
         <h3 className="text-2xl font-bold mb-2">{t("footer.contactos")}</h3>
         <ul className="flex flex-col gap-2">
           {contactos.map((c, i) => (
-            <div key={i} className="flex justify-center items-center">
+            <a
+              key={i}
+              href={c.link}
+              target={c.nombre != "Email" ? "_blank" : undefined}
+              className="flex justify-center items-center"
+            >
               <li className="text-xl me-2">{c.nombre}</li>
               <FontAwesomeIcon icon={c.icono} />
-            </div>
+            </a>
           ))}
         </ul>
       </div>
