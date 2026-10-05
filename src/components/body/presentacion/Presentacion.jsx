@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useStore } from "@/store/UseStore";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export const Presentacion = () => {
   const CvViewer = dynamic(() => import("@/hooks/pdf/CvViewer"), {
@@ -32,7 +33,8 @@ export const Presentacion = () => {
           } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300 me-5`}
           onClick={() => {
             setVer(true);
-            document.body.style.overflow = "hidden";
+            (document.body.style.overflow = "hidden"),
+              toast.info("Cargando ...");
           }}
         >
           {t("ver_cv")}
@@ -65,7 +67,9 @@ export const Presentacion = () => {
           </div>
 
           <div className="flex-1 min-h-0">
-            <CvViewer pdf={locale === "es" ? cvEspanol : cvIngles} />
+            <CvViewer
+              pdf={locale === "es" ? "/api/cv?lang=es" : "/api/cv?lang=en"}
+            />
           </div>
         </div>
       </div>
