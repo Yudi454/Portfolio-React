@@ -1,0 +1,87 @@
+{
+  "global": {
+    "profesion": "Técnico Universitario en Programación",
+    "experiencia": "experiencia",
+    "proyectos": "proyectos",
+    "habilidades": "habilidades",
+    "contacto": "contacto"
+  },
+  "presentacion": {
+    "titulo_presentacion": "Desarrollador Full Stack, con foco en Frontend y experiencia creando aplicaciones web de principio a fin.",
+    "descripcion1_presentacion": "Como Técnico Universitario en Programación, desarrollé aplicaciones web utilizando principalmente React.js, Next.js y Tailwind CSS para construir interfaces modernas y responsivas. Participé tanto en proyectos personales como en desarrollos en equipo, incluyendo una aplicación para la Dirección de Agricultura – División Tabaco, donde trabajé en funcionalidades orientadas a la gestión de certificados e inspecciones.",
+    "descripcion2_presentacion": "Además del desarrollo frontend, tengo experiencia con Node.js, Express, MySQL y MongoDB, creando APIs REST, implementando operaciones CRUD y participando en el desarrollo de aplicaciones completas. Esta experiencia me permite comprender el funcionamiento integral de un proyecto y colaborar en todo su ciclo de desarrollo",
+    "ver_cv": "Ver cv",
+    "descargar_cv": "Descargar Cv"
+  },
+  "habilidades": {
+    "lenguajes": "Lenguajes",
+    "dbs": "Bases de Datos",
+    "herramientas": "Herramientas",
+    "metodologias": "Metodologías",
+    "back": "Back-End",
+    "front": "Front-End"
+  },
+  "footer": {
+    "contactos": "Contactos",
+    "navegacion": "Navegación"
+  },
+  "contacto": {
+    "subtitulo_contacto": "¿Tenés una oportunidad laboral o un proyecto? Estoy disponible para colaborar.",
+    "nombre_contacto": "Nombre",
+    "email_contacto": "Email",
+    "mensaje_contacto": "Mensaje",
+    "enviar_contacto": "Enviar Mensaje"
+  },
+  "schema": {
+    "min_nombre": "El nombre debe tener al menos 2 caracteres",
+    "max_nombre": "El nombre es demasiado largo",
+    "required_email": "Ingresá un correo electrónico válido",
+    "min_email": "El email debe tener al menos 5 caracteres",
+    "max_email": "El email es demasiado largo",
+    "min_mensaje": "El mensaje debe tener al menos 10 caracteres",
+    "max_mensaje": "El mensaje no puede superar los 1000 caracteres"
+  },
+  "experiencia": {
+    "freelancer": "Freelancer",
+    "puesto_tabaco": "Desarrollador Full Stack",
+    "lugar_tabaco": "Dirección de Agricultura (División Tabaco)",
+    "descripcion_tabaco": "Desarrollé en equipo una aplicación web para la Dirección de Agricultura – División Tabaco, destinada a administrar certificados para empresas y asesores que manejan agroquímicos. El sistema fue construido con React.js (front-end), Node.js + Express (back-end) y MySQL Workbench (base de datos). Incluye un módulo de inscripción donde los solicitantes pueden cargar información y documentos PDF, descargar certificados y visualizar inspecciones realizadas, con o sin multas. También implementamos un módulo para empleados, que permite gestionar empresas y asesores, validar documentación y generar inspecciones.",
+    "puesto_doctor": "Frontend Developer",
+    "lugar_doctor": "Sitio web profesional para Dr. Franco Fagetti – Urólogo",
+    "descripcion_doctor": "Desarrollé de forma independiente un sitio web profesional para un médico urólogo utilizando Next.js, React.js y Tailwind CSS. Implementé un diseño responsive, componentes reutilizables, navegación entre secciones, integración de mapas y enlaces de contacto. El proyecto me permitió profundizar mis conocimientos de JavaScript y React.js y adquirir experiencia con Next.js, Tailwind CSS, SEO, optimización web y librerías de scroll."
+  },
+  "proyectos": {
+    "titulo_restaurante": "Sistema de Gestión de Reservas para Restaurante",
+    "descripcion_restaurante": "Desarrollé una aplicación web para gestionar reservas de mesas en un restaurante, permitiendo a los usuarios elegir fecha, horario y cantidad de personas. Utilicé React.js para el desarrollo del front-end, Node.js junto con Express para el back-end y MongoDB como base de datos NoSQL para almacenar las reservas y configuraciones del sistema. Implementé operaciones CRUD completas, validaciones y una interfaz centrada en la experiencia del usuario.",
+    "titulo_canchas": "Sistema de Reserva de Canchas",
+    "descripcion_canchas": "Desarrollé una aplicación web para reservar canchas deportivas, implementando un sistema CRUD completo para gestionar reservas, usuarios y horarios. Utilicé React.js en el front-end para crear una interfaz dinámica y responsiva, Node.js y Express en el back-end para gestionar las solicitudes y la lógica del servidor, y MySQL como base de datos para almacenar la información de manera segura y eficiente.",
+    "titulo_drugstore": "Proyecto Drugstore",
+    "descripcion_drugstore": "Construí una interfaz web para una drugstore enfocada en la visualización de productos y categorías, junto con una simulación del proceso de compra. El desarrollo se realizó completamente en el front-end utilizando React.js, implementando manejo de estados, filtrado de productos, carrito de compras simulado y un diseño responsive adaptable a distintos dispositivos.",
+    "titulo_e_commerce": "Página E-commerce",
+    "descripcion_e_commerce": "Desarrollé una página web de tipo E-commerce utilizando HTML, CSS y JavaScript. Implementé un sistema CRUD completo para gestionar la información y funcionalidades principales de la aplicación, junto con una interfaz orientada a la presentación y gestión de productos.",
+    "titulo_disney": "Página Disney Plus",
+    "descripcion_disney": "Recreé la interfaz visual de la plataforma Disney Plus utilizando HTML y CSS, buscando reproducir su estructura, distribución de contenidos y diseño visual mediante una interfaz responsive."
+  },
+  "descripciones_generales": {
+    "descripcion_react": "Biblioteca para crear interfaces web dinámicas y reutilizables.",
+    "descripcion_node": "Entorno para desarrollar aplicaciones y servicios del lado del servidor.",
+    "descripcion_express": "Framework para crear APIs y aplicaciones web con Node.js.",
+    "descripcion_zustand": "Librería ligera para gestionar el estado global de aplicaciones React.",
+    "descripcion_js": "Lenguaje de programación para desarrollar aplicaciones web interactivas.",
+    "descripcion_api": "Arquitectura para la comunicación entre aplicaciones mediante HTTP.",
+    "descripcion_axios": "Cliente HTTP para realizar solicitudes y consumir APIs.",
+    "descripcion_git_github": "Control de versiones y colaboración en proyectos de software.",
+    "descripcion_next": "Framework de React para desarrollar aplicaciones web modernas y optimizadas.",
+    "descripcion_tailwind": "Framework CSS para crear interfaces personalizadas de forma rápida y consistente.",
+    "descripcion_responsive": "Diseño adaptable a diferentes dispositivos y tamaños de pantalla.",
+    "descripcion_mongo": "Base de datos NoSQL utilizada para almacenar la información del sistema.",
+    "descripcion_mysql": "Base de datos relacional utilizada para almacenar usuarios, reservas y horarios.",
+    "descripcion_html": "Lenguaje utilizado para estructurar el contenido de la aplicación.",
+    "descripcion_css": "Utilizado para diseñar y dar estilo a la interfaz.",
+    "descripcion_java": "Lenguaje de programación orientado a objetos utilizado para el desarrollo de aplicaciones y sistemas.",
+    "descripcion_C#": "Lenguaje de programación orientado a objetos utilizado para el desarrollo de aplicaciones sobre el ecosistema .NET.",
+    "descripcion_git": "Sistema de control de versiones para gestionar el historial de cambios en proyectos.",
+    "descripcion_github": "Plataforma para alojar repositorios, colaborar en proyectos y gestionar versiones con Git.",
+    "descripcion_scrum": "Metodología ágil utilizada para organizar el trabajo colaborativo y el desarrollo iterativo de proyectos."
+  }
+}
