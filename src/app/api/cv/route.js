@@ -30,6 +30,9 @@ export async function GET(request) {
     return new Response(pdf, {
       headers: {
         "Content-Type": "application/pdf",
+        "Content-Disposition": `attachment; filename="CV-${
+          lang === "es" ? "Espanol" : "English"
+        }.pdf"`,
         "Cache-Control": "no-store",
       },
     });

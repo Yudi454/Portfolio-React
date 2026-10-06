@@ -39,15 +39,15 @@ export const Presentacion = () => {
         >
           {t("ver_cv")}
         </button>
-        <button
+        <a
           className={`border ${
             tema === "claro" ? "bg-white border-black" : "bg-black border-white"
-          } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300`}
-          href={locale === "es" ? cvEspanol : cvIngles}
+          } py-3 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300`}
+          href={locale === "es" ? "/api/cv?lang=es" : "/api/cv?lang=en"}
           download
         >
           {t("descargar_cv")}
-        </button>
+        </a>
       </div>
       <p className="mt-5">Tucumán, Argentina</p>
 
