@@ -17,9 +17,6 @@ export const Presentacion = () => {
   const locale = useLocale();
   const t = useTranslations("presentacion");
 
-  const cvEspanol = process.env.NEXT_PUBLIC_CV_ESPANOL;
-  const cvIngles = process.env.NEXT_PUBLIC_CV_INGLES;
-
   return (
     <article className="mt-5 md:mt-0 md:p-5 flex flex-col justify-center md:justify-start items-center md:items-start text-center  md:text-start ">
       <h1 className="text-4xl font-bold w-[90%]">{t("titulo_presentacion")}</h1>
