@@ -13,6 +13,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 export default function CvViewer({ pdf }) {
   const [scale, setScale] = useState(1);
+  const [numPages, setNumPages] = useState(null);
 
   return (
     <div className="w-full h-full overflow-auto bg-neutral-700">
@@ -33,8 +34,13 @@ export default function CvViewer({ pdf }) {
       </div>
 
       <div className="min-w-max flex justify-center p-4">
-        <Document file={pdf}>
-          <Page pageNumber={1} scale={scale} />
+        <Document
+          file={pdf}
+          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+        >
+          {Array.from({ length: numPages }, (_, index) => (
+            <Page key={index} pageNumber={index + 1} scale={scale} />
+          ))}
         </Document>
       </div>
     </div>
