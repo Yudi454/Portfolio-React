@@ -1,7 +1,7 @@
+import { useLocale } from "next-intl";
 import { create } from "zustand";
 
 export const useStore = create((set) => ({
-  tema: "oscuro",
-
+  tema: "claro",
   setTema: (tema) => set({ tema }),
 }));
