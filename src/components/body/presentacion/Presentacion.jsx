@@ -22,7 +22,7 @@ export const Presentacion = () => {
     <article className="flex justify-center items-center text-center">
       <div className="relative w-full h-full">
         <div className="absolute inset-0 z-0 w-full h-full flex justify-center items-center opacity-30 md:opacity-50">
-          <Image height={500} width={500} src={"/etiqueta.png"} />
+          <Image height={500} width={500} src={"/etiqueta.png"} alt="algo" />
         </div>
         <div className="relative z-20 flex flex-col justify-center items-center h-120 p-2 md:p-5 space-y-2">
           <h2 className=" font-bold uppercase text-4xl md:text-5xl">Lucas Yudi</h2>

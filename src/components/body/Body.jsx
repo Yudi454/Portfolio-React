@@ -3,10 +3,9 @@
 import React from "react";
 import { Presentacion } from "./presentacion/Presentacion";
 import { useStore } from "@/store/UseStore";
-import { Experiencia } from "./experiencia/Experiencia";
-import { Proyectos } from "./proyectos/Proyectos.jsx";
 import { Habilidades } from "./habilidades/Habilidades.jsx";
 import { Contacto } from "./contacto/Contacto";
+import { Trayectoria } from "./trayectoria/Trayectoria";
 
 export const Body = () => {
   const { tema, setTema } = useStore();
@@ -18,8 +17,7 @@ export const Body = () => {
       }`}
     >
       <Presentacion />
-      <Experiencia />
-      <Proyectos />
+      <Trayectoria />
       <Habilidades />
       <Contacto />
     </div>
