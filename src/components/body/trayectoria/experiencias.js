@@ -12,7 +12,8 @@ export const experiencias = [
       "MySQL",
       "JavaScript",
       "Rest API",
-      "Git/Github",
+      "Git",
+      "GitHub",
       "Scrum",
     ],
     linkCodigo: "hhtps",
@@ -25,7 +26,7 @@ export const experiencias = [
     rareza: 8,
     descripcion:
       "Desarrollé una página web personal para un profesional médico, orientada a presentar sus servicios, especialidades, información de contacto y medios para solicitar turnos. Utilicé Next.js y Tailwind CSS, incorporando diseño responsive, navegación y componentes interactivos. El proyecto me permitió adquirir experiencia práctica con Next.js y profundizar en el uso de Tailwind CSS.",
-    tecnologias: ["Next.js", "JavaScript", "Tailwind CSS", "Git/Github"],
+    tecnologias: ["Next.js", "JavaScript", "Tailwind CSS", "Git", "GitHub"],
     linkCodigo: "hhtps",
     linkProyecto: "https",
   },
