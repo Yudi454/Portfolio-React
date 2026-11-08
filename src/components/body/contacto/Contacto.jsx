@@ -38,60 +38,59 @@ export const Contacto = () => {
   };
 
   return (
-    <div id="contacto" className="scroll-mt-30 mb-10 mt-5 text-center md:text-start">
-      <div>
-        <h2 className="capitalize text-4xl font-bold md:ms-5">
-          {t("global.contacto")}
+    <div
+      id="contacto"
+      className="scroll-mt-30 mb-10 mt-5 text-center md:text-start"
+    >
+      <div className="text-center space-y-2">
+        <h2 className="capitalize text-3xl font-bold md:ms-5">
+          Enviame un mensaje
         </h2>
-        <p className="text-xl font-semibold mt-2 md:mt-0 mb-4 md:mb-0 md:ms-5">
-          {t("contacto.subtitulo_contacto")}
-        </p>
+        <div className="flex justify-center items-center">
+          <p className="text-xl w-3/4 text-gray-400 font-semibold mt-2 md:mt-0 mb-4 md:mb-0 md:ms-5">
+            ¿Tenés alguna consulta, propuesta o simplemente querés contactarme?
+            Podés escribirme mediante el siguiente formulario.
+          </p>
+        </div>
       </div>
-      <div className="flex flex-col justify-center items-center gap gap-5">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <div className="flex flex-col justify-center items-center mt-4">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col space-y-4"
+        >
           <div className="flex flex-col text-center justify-center items-center">
-            <label>{t("contacto.nombre_contacto")}</label>
+            <label className="text-[#93C5FD] uppercase font-bold">
+              {t("contacto.nombre_contacto")}:
+            </label>
             <input
               {...register("nombre")}
-              className={`border ${
-                tema === "claro"
-                  ? "bg-white border-black"
-                  : "bg-black border-white"
-              } rounded-xl px-5 py-2 me-2 text-center`}
+              className={`border-2 border-[#93C5FD] focus:outline-[#7DB5F5] focus:border-3 rounded-xl px-5 py-2 me-2 text-center`}
             />
             <span>{errors.nombre && errors.nombre.message}</span>
           </div>
           <div className="flex flex-col text-center justify-center items-center">
-            <label>{t("contacto.email_contacto")}</label>
+            <label className="text-[#93C5FD] uppercase font-bold">
+              {t("contacto.email_contacto")}:
+            </label>
             <input
               {...register("email")}
-              className={`border ${
-                tema === "claro"
-                  ? "bg-white border-black"
-                  : "bg-black border-white"
-              } rounded-xl px-5 py-2 me-2 text-center`}
+              className={`border-2 border-[#93C5FD] focus:outline-[#7DB5F5] focus:border-3 rounded-xl px-5 py-2 me-2 text-center`}
             />
             <span>{errors.email && errors.email.message}</span>
           </div>
           <div className="flex flex-col text-center justify-center items-center">
-            <label>{t("contacto.mensaje_contacto")}</label>
+            <label className="text-[#93C5FD] uppercase font-bold">
+              {t("contacto.mensaje_contacto")}:
+            </label>
             <input
               {...register("mensaje")}
-              className={`border ${
-                tema === "claro"
-                  ? "bg-white border-black"
-                  : "bg-black border-white"
-              } rounded-xl px-5 py-2 me-2 text-center`}
+              className={`border-2 border-[#93C5FD] focus:outline-[#7DB5F5] focus:border-3 rounded-xl px-5 py-2 me-2 text-center`}
             />
             <span>{errors.mensaje && errors.mensaje.message}</span>
           </div>
           <div className="flex flex-col text-center justify-center items-center">
             <button
-              className={`border ${
-                tema === "claro"
-                  ? "bg-white border-black"
-                  : "bg-black border-white"
-              } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300`}
+              className={`border-2 border-[#93C5FD] text-[#93C5FD] py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 hover:border-[#7DB5F5] hover:text-[#7DB5F5] duration-300`}
             >
               {t("contacto.enviar_contacto")}
             </button>
