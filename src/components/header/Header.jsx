@@ -45,40 +45,29 @@ export const Header = () => {
         ))}
       </div>
       <div
-        className={`mt-4 mb-4 relative flex justify-between border rounded-full w-30 h-12 ${
-          tema === "claro" ? "border-[#8B7355]" : "border-[#514174]"
+        className={`mt-4 mb-4 relative flex justify-between border rounded-full w-30 h-12 transition-colors duration-800 ${
+          tema === "claro" ? "border-[#F6C177]" : "border-[#A78BFA]"
         }`}
       >
-        {/* Circulo */}
-        <div
-          className={`rounded-full border w-12 h-12 transition-all hover:scale-110 [transition:left_1000ms_ease,scale_300ms_ease] absolute top-0  ${
-            tema === "claro"
-              ? "left-0 border-[#8B7355]"
-              : `left-[calc(100%-3rem)] border-[#514174]`
-          }`}
+        <FontAwesomeIcon
+          icon={faSun}
           onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
-        ></div>
-        <Image
-          src="/sol.png"
-          width={50}
-          height={50}
-          alt="modo claro"
+          style={{ width: "50px", height: "50px" }}
           className={`${
             tema === "claro"
-              ? "transition-opacity duration-1500 opacity-100"
-              : "opacity-0"
-          }`}
+              ? "[transition:opacity_500ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-100 translate-x-0" //Sol de derecha a izquierda
+              : "[transition:opacity_500ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-0 invisible translate-x-full" //Sol de izquierda a derecha
+          } hover:scale-110 text-[#F6C177]`}
         />
-        <Image
-          src="/luna.png"
-          width={50}
-          height={50}
-          alt="modo claro"
+        <FontAwesomeIcon
+          icon={faMoon}
+          onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
+          style={{ width: "50px", height: "50px" }}
           className={`${
-            tema === "oscuro"
-              ? `transition-opacity duration-1500 opacity-100`
-              : "opacity-0"
-          }`}
+            tema === "claro"
+              ? "[transition:opacity_1000ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-0 invisible -translate-x-full" //Luna de derecha a izquierda
+              : "[transition:opacity_1000ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-100 translate-x-0" //Luna de izquierda a derecha
+          } hover:scale-110 text-[#A78BFA]`}
         />
       </div>
       <div className="relative">
