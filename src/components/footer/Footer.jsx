@@ -7,6 +7,7 @@ import Link from "next/link";
 import { navegacion } from "./navegacion";
 import { useStore } from "@/store/UseStore";
 import { useTranslations } from "next-intl";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export const Footer = () => {
   const { tema, setTema } = useStore();
@@ -14,45 +15,18 @@ export const Footer = () => {
   const t = useTranslations();
 
   return (
-    <footer
-      className={`p-5 text-center md:text-start grid md:grid-cols-3 gap-5  ${
-        tema === "oscuro"
-          ? "bg-black text-white shadow-[0px_1px_10px_0px_white]"
-          : "bg-white text-black shadow-[0px_1px_10px_0px_black]"
-      } `}
-    >
-      <div className="md:ms-3">
-        <h2 className="text-3xl font-bold">Lucas Yudi</h2>
-        <h3 className="text-2xl">{t("global.profesion")}</h3>
+    <footer className={`bg-[#172033] p-4 md:p-5 space-y-4 text-center md:text-start`}>
+      <div className=" md:flex items-end space-x-4 space-y-4 md:space-y-0 ">
+        <div className="text-white space-y-4">
+          <h2 className="text-3xl font-bold">Lucas Yudi</h2>
+          <h3 className="text-3xl md:text-4xl font-bold">Técnico Universitario en Programación</h3>
+        </div>
+        <div className="space-x-4">
+          <FontAwesomeIcon icon={faLinkedin} className="text-white text-5xl" />
+          <FontAwesomeIcon icon={faGithub} className="text-white text-5xl"/>
+        </div>
       </div>
-      <div className="text-center">
-        <h3 className="text-2xl font-bold mb-2">{t("footer.contactos")}</h3>
-        <ul className="flex flex-col gap-2">
-          {contactos.map((c, i) => (
-            <a
-              key={i}
-              href={c.link}
-              target={c.nombre != "Email" ? "_blank" : undefined}
-              className="flex justify-center items-center"
-            >
-              <li className="text-xl me-2">{c.nombre}</li>
-              <FontAwesomeIcon icon={c.icono} />
-            </a>
-          ))}
-        </ul>
-      </div>
-      <div className="text-center">
-        <h3 className="text-2xl font-bold mb-2">{t("footer.navegacion")}</h3>
-        <ul className="flex flex-col gap-2">
-          {navegacion.map((n, i) => (
-            <li key={i}>
-              <Link href={n.link} className="capitalize text-xl me-2">
-                {t(`global.${n.nombre}`)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <p className="text-[#757575] text-xl font-bold">© 2026 Lucas Yudi</p>
     </footer>
   );
 };
