@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { experiencias } from "./experiencias";
 import { proyectos } from "./proyectos";
 import "../../../styles/rarezas/rarezas.css";
+import { useStore } from "@/store/UseStore";
 
 export const Trayectoria = ({
   trabajoSeleccionado,
   setTrabajoSeleccionado,
 }) => {
+  const { tema, setTema } = useStore();
+
   const [esCelular, setEsCelular] = useState(false);
 
   useEffect(() => {
@@ -24,12 +27,17 @@ export const Trayectoria = ({
   }, []);
 
   return (
-    <div
-      className="lg:grid lg:grid-cols-[33.33%_15%_48.33%] bg-[#93C5FD]"
-      id="trayecto"
-    >
+    <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%]" id="trayecto">
       <div className="p-5">
-        <div className="bg-[#60A5FA]/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl p-5 space-y-3">
+        <div
+          className={`
+           border ${
+             tema === "oscuro"
+               ? "bg-[#172033]/40 border-[#93C5FD]/20"
+               : "bg-[#60A5FA]/50 border-white/10"
+           }
+             backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
+        >
           <h3 className="font-bold text-2xl">Experiencia:</h3>
           <div className="space-y-4">
             {experiencias.map((e, i) => (
@@ -83,9 +91,20 @@ export const Trayectoria = ({
         {trabajoSeleccionado?.tecnologias.map((t, i) => (
           <div
             key={i}
-            className="bg-[#60A5FA]/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl p-5 space-y-3"
+            className={`
+           border ${
+             tema === "oscuro"
+               ? "bg-[#172033]/40 border-[#93C5FD]/20"
+               : "bg-[#60A5FA]/50 border-white/10"
+           }
+             backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
           >
-            <div className="bg-[#60A5FA] py-2 px-5 whitespace-nowrap w-fit rounded-xl text-white font-bold">
+            <div
+              className={`${
+                tema === "oscuro" ? "bg-[#172033]/40" : "bg-[#60A5FA]"
+              }
+               py-2 px-5 whitespace-nowrap w-fit rounded-xl text-white font-bold`}
+            >
               {t}
             </div>
           </div>
@@ -99,7 +118,15 @@ export const Trayectoria = ({
         } transition-all duration-500 space-y-4`}
       >
         {trabajoSeleccionado && (
-          <div className="bg-[#60A5FA]/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl p-5 space-y-3">
+          <div
+            className={`
+           border ${
+             tema === "oscuro"
+               ? "bg-[#172033]/40 border-[#93C5FD]/20"
+               : "bg-[#60A5FA]/50 border-white/10"
+           }
+             backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
+          >
             <h3 className="text-2xl text-center md:text-start font-bold">
               {trabajoSeleccionado.nombre}
             </h3>
@@ -131,12 +158,24 @@ export const Trayectoria = ({
               trabajoSeleccionado?.linkProyecto) && (
               <div className="flex justify-center md:justify-start space-x-3">
                 {trabajoSeleccionado?.linkCodigo && (
-                  <div className="bg-[#60A5FA] px-3 md:px-2 py-2 md:py-1 rounded-lg text-lg font-bold shadow-sm hover:scale-105 transform-scale duration-300">
+                  <div
+                    className={`${
+                      tema === "oscuro" ? "bg-[#172033]/40" : "bg-[#60A5FA]"
+                    }
+                      bg-[#60A5FA] px-3 md:px-4 py-2 md:py-2 rounded-lg text-lg font-bold shadow-sm hover:scale-105 transform-scale duration-300`}
+                  >
                     Ver Código
                   </div>
                 )}
                 {trabajoSeleccionado?.linkProyecto && (
-                  <div className="bg-white px-3 md:px-2 py-2 md:py-1 rounded-lg text-lg font-bold shadow-sm hover:scale-105 transform-scale duration-300">
+                  <div
+                    className={`
+                  ${
+                    tema === "oscuro"
+                      ? "bg-[#526783] text-white"
+                      : "bg-white text-black"
+                  } px-3 md:px-4 py-2 md:py-2 rounded-lg text-lg font-bold shadow-sm hover:scale-105 transform-scale duration-300`}
+                  >
                     Ver Proyecto
                   </div>
                 )}

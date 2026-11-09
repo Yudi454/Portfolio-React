@@ -24,13 +24,23 @@ export const Presentacion = () => {
         <div className="absolute inset-0 z-0 w-full h-full flex justify-center items-center opacity-30 md:opacity-50">
           <Image height={500} width={500} src={"/etiqueta.png"} alt="algo" />
         </div>
-        <div className="relative z-20 flex flex-col justify-center items-center h-120 p-2 md:p-5 space-y-2">
-          <h2 className=" font-bold uppercase text-4xl md:text-5xl">Lucas Yudi</h2>
+        <div
+          className={`${
+            tema === "oscuro" ? "text-[#93C5FD]" : "text-black"
+          } relative z-20 flex flex-col justify-center items-center h-120 p-2 md:p-5 space-y-2`}
+        >
+          <h2 className=" font-bold uppercase text-4xl md:text-5xl">
+            Lucas Yudi
+          </h2>
           <h1 className="text-4xl md:text-5xl mt-2">
             Técnico Universitario en Programación
           </h1>
           <div className="flex justify-center">
-            <div className="bg-[#60A5FA] text-white flex items-center px-10 py-2 mt-5 text-2xl md:text-5xl [clip-path:polygon(0%_0%,100%_0%,95%_100%,5%_100%)]">
+            <div
+              className={`${
+                tema === "oscuro" ? "bg-[#607D9E]" : "bg-[#93C5FD]"
+              } text-white flex items-center px-10 py-2 mt-5 text-2xl md:text-5xl [clip-path:polygon(0%_0%,100%_0%,95%_100%,5%_100%)]`}
+            >
               Full Stack Developer
             </div>
           </div>

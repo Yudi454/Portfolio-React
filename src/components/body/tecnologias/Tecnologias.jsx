@@ -8,8 +8,11 @@ import { frontEnd } from "./frontEnd";
 import { dbs } from "./dbs";
 import { herramientas } from "./herramientas";
 import { metodologias } from "./metodologias";
+import { useStore } from "@/store/UseStore";
 
 export const Tecnologias = ({ setTrabajoSeleccionado }) => {
+  const { tema, setTema } = useStore();
+
   const categorias = [
     "lenguajes",
     "Back-End",
@@ -41,18 +44,20 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
     );
     const result = [...data1, ...data2];
 
-    console.log(data1);
-    console.log(data2);
-    
-    
-
     setTrabajos(result);
   }, [seleccionado]);
 
   return (
-    <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%] bg-[#93C5FD]">
+    <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%]">
       <div className="p-5">
-        <div className="bg-[#60A5FA]/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl p-5 space-y-3">
+        <div
+          className={`
+           border ${
+             tema === "oscuro"
+               ? "bg-[#172033]/40 border-[#93C5FD]/20"
+               : "bg-[#60A5FA]/50 border-white/10"
+           } backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
+        >
           <h3 className="font-bold text-2xl">Categorias:</h3>
           <div className="space-y-4">
             {categorias?.map((c, i) => (
@@ -60,9 +65,15 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                 key={i}
                 className={`p-5 rounded-2xl font-bold border-b-3 ${
                   categoria === c
-                    ? "border-[#3B6F9F] shadow-xl"
+                    ? tema === "oscuro"
+                      ? "border-[#93C5FD] shadow-xl"
+                      : "border-[#3B6F9F] shadow-xl"
                     : "border-transparent"
-                } hover:border-[#3B6F9F]  transition-colors duration-500 cursor-pointer`}
+                } ${
+                  tema === "oscuro"
+                    ? "hover:border-[#93C5FD]"
+                    : "hover:border-[#3B6F9F]"
+                } transition-colors duration-500 cursor-pointer`}
                 onClick={() => {
                   setCategoria(c);
                 }}
@@ -84,14 +95,24 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
           datos[categoria]?.map((c, i) => (
             <div
               key={i}
-              className="bg-[#60A5FA]/50 backdrop-blur-lg border border-white/10 shadow-xl rounded-xl p-5 space-y-3"
+              className={`border ${
+                tema === "oscuro"
+                  ? "bg-[#172033]/40 border-[#93C5FD]/20"
+                  : "bg-[#60A5FA]/50 border-white/10"
+              } backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
             >
               <div
                 className={`p-5 rounded-2xl font-bold border-b-3 ${
                   seleccionado?.nombre === c.nombre
-                    ? "border-[#3B6F9F] shadow-xl"
+                    ? tema === "oscuro"
+                      ? "border-[#93C5FD] shadow-xl"
+                      : "border-[#3B6F9F] shadow-xl"
                     : "border-transparent"
-                } hover:border-[#3B6F9F] whitespace-nowrap transition-colors duration-500 cursor-pointer`}
+                } ${
+                  tema === "oscuro"
+                    ? "hover:border-[#93C5FD]"
+                    : "hover:border-[#3B6F9F]"
+                } whitespace-nowrap transition-colors duration-500 cursor-pointer`}
                 onClick={() => {
                   setSeleccionado(c);
                 }}
@@ -109,7 +130,13 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
             : "translate-y-0 lg:translate-x-0 opacity-100"
         } transition-all duration-500 flex overflow-x-auto space-x-2 lg:space-x-0 lg:flex-col lg:space-y-4 `}
       >
-        <div className="bg-[#60A5FA]/50 backdrop-blur-lg text-center md:text-start border border-white/10 shadow-xl rounded-xl p-5 space-y-3">
+        <div
+          className={`border ${
+            tema === "oscuro"
+              ? "bg-[#172033]/40 border-[#93C5FD]/20"
+              : "bg-[#60A5FA]/50 border-white/10"
+          } backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
+        >
           {seleccionado && (
             <div className="p-2 clear-start space-y-5">
               <h3 className="text-2xl text-center md:text-start font-bold">
@@ -120,10 +147,10 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
               </p>
               {trabajos.length > 0 && (
                 <div>
-                  <h2 className="text-2xl text-center md:text-start font-bold">
+                  <h2 className="text-2xl text-center md:text-start font-bold mb-2">
                     Proyectos donde lo uso:
                   </h2>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {trabajos.map((t, i) => (
                       <div
                         rareza={t.rareza}

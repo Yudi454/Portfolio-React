@@ -29,12 +29,6 @@ export const Contacto = () => {
     });
 
     const result = await response.json();
-
-    if (response.ok) {
-      console.log("Correo enviado");
-    } else {
-      console.log(result);
-    }
   };
 
   return (
@@ -59,7 +53,11 @@ export const Contacto = () => {
           className="flex flex-col space-y-4"
         >
           <div className="flex flex-col text-center justify-center items-center">
-            <label className="text-[#93C5FD] uppercase font-bold">
+            <label
+              className={`${
+                tema === "claro" ? "text-black" : "text-[#93C5FD]"
+              } uppercase font-bold`}
+            >
               {t("contacto.nombre_contacto")}:
             </label>
             <input
@@ -69,7 +67,11 @@ export const Contacto = () => {
             <span>{errors.nombre && errors.nombre.message}</span>
           </div>
           <div className="flex flex-col text-center justify-center items-center">
-            <label className="text-[#93C5FD] uppercase font-bold">
+            <label
+              className={`${
+                tema === "claro" ? "text-black" : "text-[#93C5FD]"
+              } uppercase font-bold`}
+            >
               {t("contacto.email_contacto")}:
             </label>
             <input
@@ -79,7 +81,11 @@ export const Contacto = () => {
             <span>{errors.email && errors.email.message}</span>
           </div>
           <div className="flex flex-col text-center justify-center items-center">
-            <label className="text-[#93C5FD] uppercase font-bold">
+            <label
+              className={`${
+                tema === "claro" ? "text-black" : "text-[#93C5FD]"
+              } uppercase font-bold`}
+            >
               {t("contacto.mensaje_contacto")}:
             </label>
             <input
@@ -90,7 +96,11 @@ export const Contacto = () => {
           </div>
           <div className="flex flex-col text-center justify-center items-center">
             <button
-              className={`border-2 border-[#93C5FD] text-[#93C5FD] py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 hover:border-[#7DB5F5] hover:text-[#7DB5F5] duration-300`}
+              className={`border-2 border-[#93C5FD] ${
+                tema === "claro"
+                  ? "text-black hover:text-black"
+                  : "text-[#93C5FD] hover:text-[#7DB5F5]"
+              } uppercase py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 hover:border-[#7DB5F5]  duration-300`}
             >
               {t("contacto.enviar_contacto")}
             </button>

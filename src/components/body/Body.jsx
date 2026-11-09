@@ -15,11 +15,11 @@ export const Body = () => {
   return (
     <div
       className={`${
-        tema === "oscuro" ? "bg-black text-white" : "bg-white text-black"
+        tema === "oscuro" ? "bg-[#526783] text-white" : "bg-white text-black"
       }`}
     >
       <Presentacion />
-      <div className="bg-[#93C5FD]">
+      <div className={`${tema === "oscuro" ? "bg-[#607D9E]" : "bg-[#93C5FD]"}`}>
         <Trayectoria
           trabajoSeleccionado={trabajoSeleccionado}
           setTrabajoSeleccionado={setTrabajoSeleccionado}
