@@ -33,7 +33,7 @@ export const Presentacion = () => {
             Lucas Yudi
           </h2>
           <h1 className="text-4xl md:text-5xl mt-2">
-            Técnico Universitario en Programación
+            {t("titulo")}
           </h1>
           <div className="flex justify-center">
             <div
@@ -41,7 +41,7 @@ export const Presentacion = () => {
                 tema === "oscuro" ? "bg-[#607D9E]" : "bg-[#93C5FD]"
               } text-white flex items-center px-10 py-2 mt-5 text-2xl md:text-5xl [clip-path:polygon(0%_0%,100%_0%,95%_100%,5%_100%)]`}
             >
-              Full Stack Developer
+              {t("profesion")}
             </div>
           </div>
         </div>

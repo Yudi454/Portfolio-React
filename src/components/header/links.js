@@ -1,14 +1,14 @@
 export const links = [
   {
-    nombre: "Mi Trayectoria",
+    nombre: "trayectoria",
     direccion: "#mitrayectoria",
   },
   {
-    nombre: "Tecnologias",
+    nombre: "tecnologias",
     direccion: "#tecnologias",
   },
   {
-    nombre: "Contacto",
+    nombre: "contacto",
     direccion: "#contacto",
   }
 ];

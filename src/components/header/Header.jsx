@@ -11,13 +11,23 @@ import Image from "next/image";
 
 export const Header = () => {
   const { tema, setTema } = useStore();
-  const t = useTranslations("global");
+
+  const [abierto, setAbierto] = useState(false);
+
+  const [idioma, setIdioma] = useState("espanol");
+
+  const [mostrarBurger, setMostrarBurger] = useState(false);
+
+  const [scrolleado, setScrolleado] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const t = useTranslations("header");
 
   const locale = useLocale();
 
   const idiomas = [
     {
-      nombre: "español",
+      nombre: "espanol",
       etiqueta: "es",
     },
     {
@@ -26,13 +36,8 @@ export const Header = () => {
     },
   ];
 
-  const [abierto, setAbierto] = useState(false);
-  const [idioma, setIdioma] = useState("español");
-  const [scrolleado, setScrolleado] = useState(0);
-  const [isClicked, setIsClicked] = useState(false);
-
   useEffect(() => {
-    locale === "es" ? setIdioma("español") : setIdioma("ingles");
+    locale === "es" ? setIdioma("espanol") : setIdioma("ingles");
   }, [locale]);
 
   useEffect(() => {
@@ -47,8 +52,6 @@ export const Header = () => {
     };
   }, []);
 
-  const [mostrarBurger, setMostrarBurger] = useState(false);
-
   return (
     <header
       className={`bg-[#172033] text-white flex flex-col md:flex-row justify-center items-center p-5 md:space-x-5 sticky top-0 z-50 ${
@@ -60,7 +63,7 @@ export const Header = () => {
       <div className=" space-y-2 md:space-y-0 md:space-x-3 hidden md:flex flex-col md:flex-row items-center">
         {links.map((l, i) => (
           <a key={i} className="text-xl uppercase font-bold">
-            {l.nombre}
+            {t(l.nombre)}
           </a>
         ))}
       </div>
@@ -103,7 +106,7 @@ export const Header = () => {
             abierto && "border-x-2 border-b-2"
           } duration-70 px-4 py-2`}
         >
-          {idioma} ▾
+          {t(idioma)} ▾
         </button>
 
         {abierto && (
@@ -122,7 +125,7 @@ export const Header = () => {
                     }}
                     className="text-xl font-bold uppercase block px-4 py-2 "
                   >
-                    {idioma.nombre}
+                    {t(idioma.nombre)}
                   </Link>
                 </li>
               ))}

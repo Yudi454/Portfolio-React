@@ -3,6 +3,7 @@ import { experiencias } from "./experiencias";
 import { proyectos } from "./proyectos";
 import "../../../styles/rarezas/rarezas.css";
 import { useStore } from "@/store/UseStore";
+import { useTranslations } from "next-intl";
 
 export const Trayectoria = ({
   trabajoSeleccionado,
@@ -26,6 +27,8 @@ export const Trayectoria = ({
     };
   }, []);
 
+  const t = useTranslations("trayectoria");
+
   return (
     <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%]" id="trayecto">
       <div className="p-5">
@@ -38,13 +41,13 @@ export const Trayectoria = ({
            }
              backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
         >
-          <h3 className="font-bold text-2xl">Experiencia:</h3>
+          <h3 className="font-bold text-2xl">{t("experiencia.titulo")}:</h3>
           <div className="space-y-4">
             {experiencias.map((e, i) => (
               <div
                 rareza={e.rareza}
                 onClick={() => {
-                  setTrabajoSeleccionado(e),
+                  setTrabajoSeleccionado({ ...e, tipo: "experiencia" }),
                     document
                       .getElementById(
                         window.innerWidth < 768 ? "tecnologias" : "trayecto"
@@ -52,19 +55,19 @@ export const Trayectoria = ({
                       ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 key={i}
-                className="p-5 rounded-2xl font-bold text-white shadow-sm hover:scale-105 transform-scale duration-300"
+                className="p-5 rounded-2xl font-bold text-white shadow-sm hover:scale-105 transform-scale duration-300 cursor-pointer"
               >
-                {e.nombre}
+                {t(`experiencia.${e.nombre}`)}
               </div>
             ))}
           </div>
-          <h3 className="font-bold text-2xl">Proyectos:</h3>
+          <h3 className="font-bold text-2xl">{t("proyectos.titulo")}:</h3>
           <div className="space-y-4">
             {proyectos.map((p, i) => (
               <div
                 rareza={p.rareza}
                 onClick={() => {
-                  setTrabajoSeleccionado(p),
+                  setTrabajoSeleccionado({ ...p, tipo: "proyectos" }),
                     document
                       .getElementById(
                         window.innerWidth < 768 ? "tecnologias" : "trayecto"
@@ -72,9 +75,9 @@ export const Trayectoria = ({
                       ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 key={i}
-                className="p-5 rounded-2xl font-bold text-white shadow-sm hover:scale-105 transform-scale duration-300"
+                className="p-5 rounded-2xl font-bold text-white shadow-sm hover:scale-105 transform-scale duration-300 cursor-pointer"
               >
-                {p.nombre}
+                {t(`proyectos.${p.nombre}`)}
               </div>
             ))}
           </div>
@@ -128,12 +131,16 @@ export const Trayectoria = ({
              backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
           >
             <h3 className="text-2xl text-center md:text-start font-bold">
-              {trabajoSeleccionado.nombre}
+              {t(`${trabajoSeleccionado.tipo}.${trabajoSeleccionado.nombre}`)}
             </h3>
             {trabajoSeleccionado?.contratante &&
               trabajoSeleccionado?.modalidad && (
                 <div className="md:flex text-center justify-between text-xl md:text-lg space-y-2 md:space-y-0 text-gray-600">
-                  <p>{trabajoSeleccionado.contratante}</p>
+                  <p>
+                    {t(
+                      `${trabajoSeleccionado.tipo}.${trabajoSeleccionado.contratante}`
+                    )}
+                  </p>
                   <p>{trabajoSeleccionado.modalidad}</p>
                 </div>
               )}
@@ -144,43 +151,37 @@ export const Trayectoria = ({
                     className="text-lg capitalize font-bold"
                     text-rareza={trabajoSeleccionado.rareza}
                   >
-                    rareza - {trabajoSeleccionado.rareza}
+                    {t("general.rareza")} - {trabajoSeleccionado.rareza}
                   </p>
                 </div>
               </div>
             )}
             <div className="text-center md:text-start">
               <p className="text-xl font-medium md:font-normal md:text-lg">
-                {trabajoSeleccionado.descripcion}
+                {t(
+                  `${trabajoSeleccionado.tipo}.${trabajoSeleccionado.descripcion}`
+                )}
               </p>
             </div>
-            {(trabajoSeleccionado?.linkCodigo ||
-              trabajoSeleccionado?.linkProyecto) && (
-              <div className="flex justify-center md:justify-start space-x-3">
-                {trabajoSeleccionado?.linkCodigo && (
-                  <div
-                    className={`${
-                      tema === "oscuro" ? "bg-[#172033]/40" : "bg-[#60A5FA]"
-                    }
-                      bg-[#60A5FA] px-3 md:px-4 py-2 md:py-2 rounded-lg text-lg font-bold shadow-sm hover:scale-105 transform-scale duration-300`}
-                  >
-                    Ver Código
-                  </div>
-                )}
-                {trabajoSeleccionado?.linkProyecto && (
-                  <div
-                    className={`
-                  ${
-                    tema === "oscuro"
+            <div className="flex flex-col md:flex-row items-center md:items-start space-y-5 md:space-y-0 md:space-x-5">
+              {trabajoSeleccionado?.links?.map((l, i) => (
+                <div
+                  key={i}
+                  className={`${
+                    l.nombre != "ver_sitio"
+                      ? tema === "oscuro"
+                        ? "bg-[#172033]/40"
+                        : "bg-[#60A5FA]"
+                      : tema === "oscuro"
                       ? "bg-[#526783] text-white"
                       : "bg-white text-black"
-                  } px-3 md:px-4 py-2 md:py-2 rounded-lg text-lg font-bold shadow-sm hover:scale-105 transform-scale duration-300`}
-                  >
-                    Ver Proyecto
-                  </div>
-                )}
-              </div>
-            )}
+                  } px-3 md:px-4 py-2 md:py-2 rounded-lg text-2xl md:text-lg font-bold capitalize shadow-sm hover:scale-105 transform-scale duration-300`}
+                  onClick={() => window.open(l.direccion, "_blank")}
+                >
+                  {t(`general.${l.nombre}`)}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>

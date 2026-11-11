@@ -9,18 +9,11 @@ import { dbs } from "./dbs";
 import { herramientas } from "./herramientas";
 import { metodologias } from "./metodologias";
 import { useStore } from "@/store/UseStore";
+import { useTranslations } from "next-intl";
+import { categorias } from "./categorias";
 
 export const Tecnologias = ({ setTrabajoSeleccionado }) => {
   const { tema, setTema } = useStore();
-
-  const categorias = [
-    "lenguajes",
-    "Back-End",
-    "Front-End",
-    "Base de Datos",
-    "Herramientas",
-    "Metodologias",
-  ];
 
   const [categoria, setCategoria] = useState();
   const [seleccionado, setSeleccionado] = useState();
@@ -28,25 +21,36 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
 
   const datos = {
     lenguajes: lenguajes,
-    "Back-End": backEnd,
-    "Front-End": frontEnd,
-    "Base de Datos": dbs,
-    Herramientas: herramientas,
-    Metodologias: metodologias,
+    "back": backEnd,
+    "front": frontEnd,
+    "dbs": dbs,
+    herramientas: herramientas,
+    metodologias: metodologias,
   };
 
   useEffect(() => {
-    const data1 = experiencias.filter((e) =>
-      e.tecnologias.some((t) => t === seleccionado?.nombre)
-    );
-    const data2 = proyectos.filter((p) =>
-      p.tecnologias.some((t) => t === seleccionado?.nombre)
-    );
+    const data1 = experiencias
+      .filter((e) => e.tecnologias.some((t) => t === seleccionado?.nombre))
+      .map((e) => ({
+        nombre: e.nombre,
+        tipo: "experiencia",
+        rareza: e.rareza,
+      }));
+    const data2 = proyectos
+      .filter((p) => p.tecnologias.some((t) => t === seleccionado?.nombre))
+      .map((e) => ({
+        nombre: e.nombre,
+        tipo: "proyectos",
+        rareza: e.rareza,
+      }));
+
     const result = [...data1, ...data2];
 
     setTrabajos(result);
   }, [seleccionado]);
 
+  const t = useTranslations("tecnologias");
+  const trayectoria = useTranslations("trayectoria");
   return (
     <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%]">
       <div className="p-5">
@@ -58,7 +62,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                : "bg-[#60A5FA]/50 border-white/10"
            } backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
         >
-          <h3 className="font-bold text-2xl">Categorias:</h3>
+          <h3 className="font-bold text-2xl">{t("categorias.titulo")}:</h3>
           <div className="space-y-4">
             {categorias?.map((c, i) => (
               <div
@@ -78,7 +82,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                   setCategoria(c);
                 }}
               >
-                <p className="cursor-pointer">{c}</p>
+                <p className="cursor-pointer">{t(`categorias.${c}`)}</p>
               </div>
             ))}
           </div>
@@ -143,7 +147,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                 {seleccionado.nombre}
               </h3>
               <p className="text-xl font-medium md:font-normal md:text-lg">
-                {seleccionado.descripcion}
+                {t(`descripciones.${seleccionado.descripcion}`)}
               </p>
               {trabajos.length > 0 && (
                 <div>
@@ -151,9 +155,9 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                     Proyectos donde lo uso:
                   </h2>
                   <div className="space-y-3">
-                    {trabajos.map((t, i) => (
+                    {trabajos.map((tr, i) => (
                       <div
-                        rareza={t.rareza}
+                        rareza={tr.rareza}
                         key={i}
                         onClick={() => {
                           setTrabajoSeleccionado(t),
@@ -163,7 +167,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                         }}
                         className="p-5 rounded-2xl font-bold text-white shadow-sm hover:scale-105 transform-scale duration-300 cursor-pointer"
                       >
-                        {t.nombre}
+                        {trayectoria(`${tr.tipo}.${tr.nombre}`)}
                       </div>
                     ))}
                   </div>

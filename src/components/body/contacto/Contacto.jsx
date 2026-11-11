@@ -1,15 +1,13 @@
 import { useStore } from "@/store/UseStore";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useForm } from "react-hook-form";
-import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./schema";
 import { useTranslations } from "next-intl";
 
 export const Contacto = () => {
-  const { tema, setTema } = useStore();
+  const { tema } = useStore();
 
-  const t = useTranslations();
+  const t = useTranslations("contacto");
 
   const {
     register,
@@ -58,7 +56,7 @@ export const Contacto = () => {
                 tema === "claro" ? "text-black" : "text-[#93C5FD]"
               } uppercase font-bold`}
             >
-              {t("contacto.nombre_contacto")}:
+              {t("nombre_contacto")}:
             </label>
             <input
               {...register("nombre")}
@@ -72,7 +70,7 @@ export const Contacto = () => {
                 tema === "claro" ? "text-black" : "text-[#93C5FD]"
               } uppercase font-bold`}
             >
-              {t("contacto.email_contacto")}:
+              {t("email_contacto")}:
             </label>
             <input
               {...register("email")}
@@ -86,7 +84,7 @@ export const Contacto = () => {
                 tema === "claro" ? "text-black" : "text-[#93C5FD]"
               } uppercase font-bold`}
             >
-              {t("contacto.mensaje_contacto")}:
+              {t("mensaje_contacto")}:
             </label>
             <input
               {...register("mensaje")}
@@ -102,7 +100,7 @@ export const Contacto = () => {
                   : "text-[#93C5FD] hover:text-[#7DB5F5]"
               } uppercase py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 hover:border-[#7DB5F5]  duration-300`}
             >
-              {t("contacto.enviar_contacto")}
+              {t("enviar_contacto")}
             </button>
           </div>
         </form>
