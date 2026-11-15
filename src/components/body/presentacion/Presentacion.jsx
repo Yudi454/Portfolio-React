@@ -1,72 +1,40 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
 import { useStore } from "@/store/UseStore";
-import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export const Presentacion = () => {
-  const CvViewer = dynamic(() => import("@/hooks/pdf/CvViewer"), {
-    ssr: false,
-  });
-  const { tema, setTema } = useStore();
-  const [ver, setVer] = useState(false);
+  const { tema } = useStore();
 
-  const locale = useLocale();
   const t = useTranslations("presentacion");
 
   return (
-    <article className="mt-5 md:mt-0 md:p-5 flex flex-col justify-center md:justify-start items-center md:items-start text-center  md:text-start ">
-      <h1 className="text-4xl font-bold w-[90%]">{t("titulo_presentacion")}</h1>
-      <p className="text-xl w-[80%] mt-5">{t("descripcion1_presentacion")}</p>
-      <br />
-      <p className="text-xl w-[80%]">{t("descripcion2_presentacion")}</p>
-      <div className="mt-5">
-        <button
-          className={`border ${
-            tema === "claro" ? "bg-white border-black" : "bg-black border-white"
-          } py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300 me-5`}
-          onClick={() => {
-            setVer(true);
-            (document.body.style.overflow = "hidden"),
-              toast.info("Cargando ...");
-          }}
-        >
-          {t("ver_cv")}
-        </button>
-        <a
-          className={`border ${
-            tema === "claro" ? "bg-white border-black" : "bg-black border-white"
-          } py-3 px-6 rounded-xl text-xl font-bold hover:scale-101 duration-300`}
-          href={locale === "es" ? "/api/cv?lang=es" : "/api/cv?lang=en"}
-          download
-        >
-          {t("descargar_cv")}
-        </a>
-      </div>
-      <p className="mt-5">Tucumán, Argentina</p>
+    <article className="flex justify-center items-center text-center">
+      <div className="relative w-full h-full">
+        {/* Imagen de fondo */}
+        <div className="absolute inset-0 z-0 w-full h-full flex justify-center items-center opacity-30 md:opacity-50">
+          <Image height={500} width={500} src={"/etiqueta.png"} alt="algo" />
+        </div>
 
-      <div className={`${ver ? "" : "hidden"} fixed inset-0 z-50 p-2 md:p-10`}>
-        <div className="absolute inset-0 -z-10 bg-black/60"></div>
-
-        <div className="relative border border-black rounded-2xl z-50 overflow-hidden h-full flex flex-col">
-          <div className="bg-white flex justify-end h-10 shrink-0">
-            <button
-              onClick={() => {
-                setVer(false), (document.body.style.overflow = "");
-              }}
-              className="me-5 text-black text-xl font-bolds"
+        {/* Mi presentacion */}
+        <div
+          className={`${
+            tema === "oscuro" ? "text-[#93C5FD]" : "text-black"
+          } relative z-20 flex flex-col justify-center items-center h-120 p-2 md:p-5 space-y-2`}
+        >
+          <h2 className=" font-bold uppercase text-4xl md:text-5xl">
+            Lucas Yudi
+          </h2>
+          <h1 className="text-4xl md:text-5xl mt-2">{t("titulo")}</h1>
+          <div className="flex justify-center">
+            <div
+              className={`${
+                tema === "oscuro" ? "bg-[#607D9E]" : "bg-[#93C5FD]"
+              } text-white flex items-center px-10 py-2 mt-5 text-2xl md:text-5xl [clip-path:polygon(0%_0%,100%_0%,95%_100%,5%_100%)]`}
             >
-              X
-            </button>
-          </div>
-
-          <div className="flex-1 min-h-0">
-            <CvViewer
-              pdf={locale === "es" ? "/api/cv?lang=es" : "/api/cv?lang=en"}
-            />
+              {t("profesion")}
+            </div>
           </div>
         </div>
       </div>

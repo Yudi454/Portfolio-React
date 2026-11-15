@@ -1,118 +1,189 @@
 "use client";
 
 import { useStore } from "@/store/UseStore";
+import { useEffect, useState } from "react";
 import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import React, { useState } from "react";
 import { links } from "./links";
 
 export const Header = () => {
   const { tema, setTema } = useStore();
-  const t = useTranslations("global");
+
+  const [abierto, setAbierto] = useState(false);
+
+  const [idioma, setIdioma] = useState("espanol");
+
+  const [mostrarBurger, setMostrarBurger] = useState(false);
+
+  const [scrolleado, setScrolleado] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const t = useTranslations("header");
 
   const locale = useLocale();
 
-  const [mostrar, setMostrar] = useState(false);
+  const idiomas = [
+    {
+      nombre: "espanol",
+      etiqueta: "es",
+    },
+    {
+      nombre: "ingles",
+      etiqueta: "en",
+    },
+  ];
+
+  useEffect(() => {
+    locale === "es" ? setIdioma("espanol") : setIdioma("ingles");
+  }, [locale]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolleado(window.scrollY === 0 ? 0 : window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
-      className={`sticky top-0 p-5 grid z-1 md:grid-cols-[40%_60%] w-full ${
-        tema === "oscuro"
-          ? "bg-black text-white shadow-[0px_1px_10px_0px_white]"
-          : "bg-white text-black shadow-[0px_1px_10px_0px_black]"
-      }`}
+      className={`bg-[#172033] text-white flex flex-col md:flex-row justify-center items-center p-5 md:space-x-5 sticky top-0 z-50 ${
+        scrolleado === 0 ? "opacity-100" : "opacity-50"
+      } hover:opacity-100 ${
+        isClicked && "opacity-100"
+      } transition-opacity duration-400`}
     >
-      {/* Datos mios */}
-      <div>
-        <h2 className="text-4xl font-bold">Lucas Yudi</h2>
-        <h2 className="text-3xl">{t("profesion")}</h2>
+      {/* Links en modo pc */}
+      <div className=" space-y-2 md:space-y-0 md:space-x-3 hidden md:flex flex-col md:flex-row items-center">
+        {links.map((l, i) => (
+          <a key={i} className="text-xl uppercase font-bold">
+            {t(l.nombre)}
+          </a>
+        ))}
       </div>
 
+      {/* Boton de cambio de color */}
       <div
-        className="md:hidden flex justify-center items-center mt-2 mb-2"
-        onClick={() => (mostrar ? setMostrar(false) : setMostrar(true))}
+        className={`mt-4 mb-4 relative flex justify-between border rounded-full w-30 h-12 transition-colors duration-800 ${
+          tema === "claro" ? "border-[#F6C177]" : "border-[#A78BFA]"
+        }`}
       >
-        <FontAwesomeIcon icon={faBars} />
+        {/* Icono del Sol */}
+        <FontAwesomeIcon
+          icon={faSun}
+          onClick={() => {
+            setTema(tema === "claro" ? "oscuro" : "claro");
+          }}
+          style={{ width: "50px", height: "50px" }}
+          className={`${
+            tema === "claro"
+              ? "[transition:opacity_500ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-100 translate-x-0" //Sol de derecha a izquierda
+              : "[transition:opacity_500ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-0 invisible translate-x-full" //Sol de izquierda a derecha
+          } hover:scale-110 text-[#F6C177]`}
+        />
+
+        {/* Icono de la luna */}
+        <FontAwesomeIcon
+          icon={faMoon}
+          onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
+          style={{ width: "50px", height: "50px" }}
+          className={`${
+            tema === "claro"
+              ? "[transition:opacity_1000ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-0 invisible -translate-x-full" //Luna de derecha a izquierda
+              : "[transition:opacity_1000ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-100 translate-x-0" //Luna de izquierda a derecha
+          } hover:scale-110 text-[#A78BFA]`}
+        />
       </div>
-      <div
-        className={`grid transition-[grid-template-rows] duration-300 ${
-          mostrar ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        } md:block`}
-      >
-        <div
-          className={`overflow-hidden flex flex-col md:flex-row items-center justify-end w-full gap-5
-      transition-all duration-300 ${
-        mostrar
-          ? "translate-y-0 opacity-100"
-          : "-translate-y-5 opacity-0 pointer-events-none"
-      }
-      md:translate-y-0 md:opacity-100 md:pointer-events-auto`}
+
+      {/* Cambio de idioma */}
+      <div className="relative">
+        <button
+          type="button"
+          onClick={() => {
+            setAbierto(abierto === true ? false : true),
+              setIsClicked(isClicked ? false : true);
+          }}
+          className={`text-xl font-bold uppercase hover:border-x-2 hover:border-b-2 ${
+            abierto && "border-x-2 border-b-2"
+          } duration-70 px-4 py-2`}
         >
-          {/* Links */}
-          {links.map((l, i) => (
-            <Link
-              key={i}
-              href={l.direccion}
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById(l.direccion.substring(1))
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="uppercase font-semibold transition-transform duration-100 hover:scale-105 text-xl"
-            >
-              {t(l.nombre)}
-            </Link>
-          ))}
+          {t(idioma)} ▾
+        </button>
 
-          {/* Contenedor de cambio de color */}
-          <div
-            className={`relative h-10 w-30 overflow-hidden rounded-xl border transition-colors duration-300 ${
-              tema === "oscuro"
-                ? "border-white/20 bg-zinc-900"
-                : "border-black/50 bg-amber-50"
-            }`}
+        {/* Idiomas */}
+        {abierto && (
+          <ul
+            className={`absolute z-10 bg-[#172033]/50 backdrop-blur-md hover:border-x-2 hover:border-b-2 shadow-lg duration-70`}
           >
-            {/* Track / fondo */}
-            <div
-              className={`absolute inset-0 bg-linear-to-r transition-all duration-500 ${
-                tema === "oscuro"
-                  ? "from-zinc-950 via-zinc-800 to-zinc-700"
-                  : "from-amber-100 via-orange-50 to-white"
-              }`}
-            />
+            {idiomas
+              .filter((i) => i.nombre != idioma)
+              .map((idioma, i) => (
+                <li key={i}>
+                  <Link
+                    href={"/"}
+                    locale={idioma.etiqueta}
+                    onClick={() => {
+                      setAbierto(false), setIsClicked(false);
+                    }}
+                    className="text-xl font-bold uppercase block px-4 py-2 "
+                  >
+                    {t(idioma.nombre)}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        )}
+      </div>
 
-            {/* Contenedor del icono */}
-            <div
-              className={`absolute flex items-center top-0 h-full w-1/2 rounded-xl transition-all duration-600 ${
-                tema === "oscuro"
-                  ? "translate-x-0"
-                  : "translate-x-full justify-end"
-              }`}
-            >
-              <FontAwesomeIcon
-                className={` cursor-pointer text-3xl h-full drop-shadow-sm transition-colors duration-300${
-                  tema === "oscuro"
-                    ? "text-sky-200 hover:text-sky-100" // luna más suave y elegante
-                    : "text-amber-500 hover:text-amber-400"
-                }`}
-                onClick={() =>
-                  tema === "oscuro" ? setTema("claro") : setTema("oscuro")
-                }
-                icon={tema === "oscuro" ? faMoon : faSun}
-              />
-            </div>
+      {/* Boton para mostrar links en modo celular */}
+      <div
+        className="md:hidden flex mt-2"
+        onClick={() => {
+          setMostrarBurger(mostrarBurger ? false : true),
+            setIsClicked(isClicked ? false : true);
+        }}
+      >
+        {/* Icono de barras */}
+        <FontAwesomeIcon icon={faBars} className="text-4xl" />
+        <p className="text-3xl">▾</p>
+      </div>
+
+      {/* Seccion de links en modo celular */}
+      <div
+        className={`grid md:hidden transition-[grid-template-rows] duration-500 ${
+          mostrarBurger ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div
+            className={`
+            ${
+              !mostrarBurger
+                ? "-translate-y-10 opacity-0"
+                : "translate-y-0 opacity-100"
+            } transition-transform duration-500
+          mt-4 space-y-4 md:space-y-0 md:space-x-3
+          flex
+          md:hidden flex-col md:flex-row items-center`}
+          >
+            {links.map((l, i) => (
+              <a
+                key={i}
+                className="text-2xl uppercase font-bold"
+                onClick={() => {
+                  setIsClicked(false), setMostrarBurger(false);
+                }}
+              >
+                {l.nombre}
+              </a>
+            ))}
           </div>
-          {/* Cambiar lenguaje */}
-          <Link href="/" locale={locale === "es" ? "en" : "es"}>
-            <span
-              className={`transition-transform duration-100 hover:scale-105 text-4xl fi fi-${
-                locale === "es" ? "gb" : "es"
-              }`}
-            ></span>
-          </Link>
         </div>
       </div>
     </header>
