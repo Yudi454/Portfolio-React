@@ -1,13 +1,12 @@
 "use client";
 
 import { useStore } from "@/store/UseStore";
+import { useEffect, useState } from "react";
 import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import React, { useEffect, useState } from "react";
 import { links } from "./links";
-import Image from "next/image";
 
 export const Header = () => {
   const { tema, setTema } = useStore();
@@ -60,6 +59,7 @@ export const Header = () => {
         isClicked && "opacity-100"
       } transition-opacity duration-400`}
     >
+      {/* Links en modo pc */}
       <div className=" space-y-2 md:space-y-0 md:space-x-3 hidden md:flex flex-col md:flex-row items-center">
         {links.map((l, i) => (
           <a key={i} className="text-xl uppercase font-bold">
@@ -67,11 +67,14 @@ export const Header = () => {
           </a>
         ))}
       </div>
+
+      {/* Boton de cambio de color */}
       <div
         className={`mt-4 mb-4 relative flex justify-between border rounded-full w-30 h-12 transition-colors duration-800 ${
           tema === "claro" ? "border-[#F6C177]" : "border-[#A78BFA]"
         }`}
       >
+        {/* Icono del Sol */}
         <FontAwesomeIcon
           icon={faSun}
           onClick={() => {
@@ -84,6 +87,8 @@ export const Header = () => {
               : "[transition:opacity_500ms_ease,scale_300ms_ease,translate_1000ms_ease] opacity-0 invisible translate-x-full" //Sol de izquierda a derecha
           } hover:scale-110 text-[#F6C177]`}
         />
+
+        {/* Icono de la luna */}
         <FontAwesomeIcon
           icon={faMoon}
           onClick={() => setTema(tema === "claro" ? "oscuro" : "claro")}
@@ -95,6 +100,8 @@ export const Header = () => {
           } hover:scale-110 text-[#A78BFA]`}
         />
       </div>
+
+      {/* Cambio de idioma */}
       <div className="relative">
         <button
           type="button"
@@ -109,6 +116,7 @@ export const Header = () => {
           {t(idioma)} ▾
         </button>
 
+        {/* Idiomas */}
         {abierto && (
           <ul
             className={`absolute z-10 bg-[#172033]/50 backdrop-blur-md hover:border-x-2 hover:border-b-2 shadow-lg duration-70`}
@@ -132,6 +140,8 @@ export const Header = () => {
           </ul>
         )}
       </div>
+
+      {/* Boton para mostrar links en modo celular */}
       <div
         className="md:hidden flex mt-2"
         onClick={() => {
@@ -139,9 +149,12 @@ export const Header = () => {
             setIsClicked(isClicked ? false : true);
         }}
       >
+        {/* Icono de barras */}
         <FontAwesomeIcon icon={faBars} className="text-4xl" />
         <p className="text-3xl">▾</p>
       </div>
+
+      {/* Seccion de links en modo celular */}
       <div
         className={`grid md:hidden transition-[grid-template-rows] duration-500 ${
           mostrarBurger ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

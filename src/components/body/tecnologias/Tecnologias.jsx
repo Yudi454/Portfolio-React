@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { experiencias } from "../trayectoria/experiencias";
 import { proyectos } from "../trayectoria/proyectos";
 import "../../../styles/rarezas/rarezas.css";
@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
 import { categorias } from "./categorias";
 
 export const Tecnologias = ({ setTrabajoSeleccionado }) => {
-  const { tema, setTema } = useStore();
+  const { tema } = useStore();
 
   const [categoria, setCategoria] = useState();
   const [seleccionado, setSeleccionado] = useState();
@@ -21,12 +21,15 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
 
   const datos = {
     lenguajes: lenguajes,
-    "back": backEnd,
-    "front": frontEnd,
-    "dbs": dbs,
+    back: backEnd,
+    front: frontEnd,
+    dbs: dbs,
     herramientas: herramientas,
     metodologias: metodologias,
   };
+
+  const t = useTranslations("tecnologias");
+  const trayectoria = useTranslations("trayectoria");
 
   useEffect(() => {
     const data1 = experiencias
@@ -49,11 +52,10 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
     setTrabajos(result);
   }, [seleccionado]);
 
-  const t = useTranslations("tecnologias");
-  const trayectoria = useTranslations("trayectoria");
   return (
     <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%]">
       <div className="p-5">
+        {/* Categorias */}
         <div
           className={`
            border ${
@@ -62,8 +64,10 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                : "bg-[#60A5FA]/50 border-white/10"
            } backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
         >
+          {/* Titulo */}
           <h3 className="font-bold text-2xl">{t("categorias.titulo")}:</h3>
           <div className="space-y-4">
+            {/* Recorrer categorias */}
             {categorias?.map((c, i) => (
               <div
                 key={i}
@@ -88,6 +92,8 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
           </div>
         </div>
       </div>
+
+      {/* Tecnologias por categoria */}
       <div
         className={`p-5 ${
           categoria === undefined
@@ -95,6 +101,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
             : "translate-y-0 lg:translate-x-0 opacity-100"
         } transition-all duration-500 flex overflow-x-auto space-x-2 lg:space-x-0 lg:flex-col lg:space-y-4 `}
       >
+        {/* Recorre las tecnologias por categoria */}
         {categoria &&
           datos[categoria]?.map((c, i) => (
             <div
@@ -127,6 +134,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
           ))}
       </div>
 
+      {/* Tecnologia o Herramienta seleccionada */}
       <div
         className={`p-5 ${
           seleccionado === undefined
@@ -149,6 +157,8 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
               <p className="text-xl font-medium md:font-normal md:text-lg">
                 {t(`descripciones.${seleccionado.descripcion}`)}
               </p>
+
+              {/* Recorro trabajos que incluya dicha tecnologia/herramienta */}
               {trabajos.length > 0 && (
                 <div>
                   <h2 className="text-2xl text-center md:text-start font-bold mb-2">

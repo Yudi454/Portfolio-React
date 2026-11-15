@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "./schema";
 import { useTranslations } from "next-intl";
+import { toast } from "react-toastify";
 
 export const Contacto = () => {
   const { tema } = useStore();
@@ -13,6 +14,7 @@ export const Contacto = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     resolver: zodResolver(schema(t)),
   });
@@ -26,7 +28,13 @@ export const Contacto = () => {
       body: JSON.stringify(data),
     });
 
+    //Configurar respuesta de exito
     const result = await response.json();
+
+    if (result) {
+      toast.success("Correo enviado con éxito");
+      reset()
+    }
   };
 
   return (
@@ -34,6 +42,7 @@ export const Contacto = () => {
       id="contacto"
       className="scroll-mt-30 mb-10 mt-5 text-center md:text-start"
     >
+      {/* Hero de Contacto */}
       <div className="text-center space-y-2">
         <h2 className="capitalize text-3xl font-bold md:ms-5">
           Enviame un mensaje
@@ -45,12 +54,15 @@ export const Contacto = () => {
           </p>
         </div>
       </div>
+
+      {/* Formulario de contacto  */}
       <div className="flex flex-col justify-center items-center mt-4">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-4"
         >
-          <div className="flex flex-col text-center justify-center items-center">
+          {/* Nombre */}
+          <div className="flex flex-col text-center justify-center w-70 md:w-100">
             <label
               className={`${
                 tema === "claro" ? "text-black" : "text-[#93C5FD]"
@@ -64,7 +76,9 @@ export const Contacto = () => {
             />
             <span>{errors.nombre && errors.nombre.message}</span>
           </div>
-          <div className="flex flex-col text-center justify-center items-center">
+
+          {/* Email */}
+          <div className="flex flex-col text-center justify-center w-70 md:w-100">
             <label
               className={`${
                 tema === "claro" ? "text-black" : "text-[#93C5FD]"
@@ -78,7 +92,9 @@ export const Contacto = () => {
             />
             <span>{errors.email && errors.email.message}</span>
           </div>
-          <div className="flex flex-col text-center justify-center items-center">
+
+          {/* Mensaje */}
+          <div className="flex flex-col text-center justify-center w-70 md:w-100">
             <label
               className={`${
                 tema === "claro" ? "text-black" : "text-[#93C5FD]"
@@ -86,19 +102,21 @@ export const Contacto = () => {
             >
               {t("mensaje_contacto")}:
             </label>
-            <input
+            <textarea
               {...register("mensaje")}
               className={`border-2 border-[#93C5FD] focus:outline-[#7DB5F5] focus:border-3 rounded-xl px-5 py-2 me-2 text-center`}
             />
             <span>{errors.mensaje && errors.mensaje.message}</span>
           </div>
+
+          {/* Boton de enviar mensaje */}
           <div className="flex flex-col text-center justify-center items-center">
             <button
               className={`border-2 border-[#93C5FD] ${
                 tema === "claro"
                   ? "text-black hover:text-black"
                   : "text-[#93C5FD] hover:text-[#7DB5F5]"
-              } uppercase py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-101 hover:border-[#7DB5F5]  duration-300`}
+              } uppercase py-2.5 px-6 rounded-xl text-xl font-bold hover:scale-102 hover:border-[#7DB5F5] hover:border-3  duration-100`}
             >
               {t("enviar_contacto")}
             </button>

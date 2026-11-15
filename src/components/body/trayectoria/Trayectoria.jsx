@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { experiencias } from "./experiencias";
-import { proyectos } from "./proyectos";
-import "../../../styles/rarezas/rarezas.css";
+import { useEffect, useState } from "react";
 import { useStore } from "@/store/UseStore";
 import { useTranslations } from "next-intl";
+import { proyectos } from "./proyectos";
+import { experiencias } from "./experiencias";
+
+import "../../../styles/rarezas/rarezas.css";
 
 export const Trayectoria = ({
   trabajoSeleccionado,
   setTrabajoSeleccionado,
 }) => {
-  const { tema, setTema } = useStore();
+  const { tema } = useStore();
 
   const [esCelular, setEsCelular] = useState(false);
+
+  const t = useTranslations("trayectoria");
 
   useEffect(() => {
     const comprobarAncho = () => {
@@ -27,11 +30,10 @@ export const Trayectoria = ({
     };
   }, []);
 
-  const t = useTranslations("trayectoria");
-
   return (
     <div className="lg:grid lg:grid-cols-[33.33%_15%_48.33%]" id="trayecto">
       <div className="p-5">
+        {/* Experiencia */}
         <div
           className={`
            border ${
@@ -42,6 +44,7 @@ export const Trayectoria = ({
              backdrop-blur-lg  shadow-xl rounded-xl p-5 space-y-3`}
         >
           <h3 className="font-bold text-2xl">{t("experiencia.titulo")}:</h3>
+          {/* Recorre las experiencias */}
           <div className="space-y-4">
             {experiencias.map((e, i) => (
               <div
@@ -61,8 +64,11 @@ export const Trayectoria = ({
               </div>
             ))}
           </div>
+
+          {/* Proyectos */}
           <h3 className="font-bold text-2xl">{t("proyectos.titulo")}:</h3>
           <div className="space-y-4">
+            {/* Recorre los proyectos */}
             {proyectos.map((p, i) => (
               <div
                 rareza={p.rareza}
@@ -83,6 +89,8 @@ export const Trayectoria = ({
           </div>
         </div>
       </div>
+
+      {/* Muestra las tecnologias/herramientas de dicho proyecto */}
       <div
         id="tecnologias"
         className={`p-5 ${
@@ -91,6 +99,7 @@ export const Trayectoria = ({
             : "translate-y-0 lg:translate-x-0 opacity-100"
         } transition-all duration-500 flex overflow-x-auto space-x-2 lg:space-x-0 lg:flex-col lg:space-y-4 `}
       >
+        {/* Recorre las tecnologias del trabajo seleccionado */}
         {trabajoSeleccionado?.tecnologias.map((t, i) => (
           <div
             key={i}
@@ -113,6 +122,8 @@ export const Trayectoria = ({
           </div>
         ))}
       </div>
+
+      {/* Muestro la info del trabajo seleccionado */}
       <div
         className={`p-5 ${
           trabajoSeleccionado === undefined
@@ -163,6 +174,8 @@ export const Trayectoria = ({
                 )}
               </p>
             </div>
+
+            {/* Botones para ver el codigo o el deploy */}
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-5 md:space-y-0 md:space-x-5">
               {trabajoSeleccionado?.links?.map((l, i) => (
                 <div
@@ -185,6 +198,8 @@ export const Trayectoria = ({
           </div>
         )}
       </div>
+
+      {/* Boton que solo aparece en modo celular para volver arriba para seleccionar otro trabajo */}
       {esCelular && trabajoSeleccionado && (
         <div className="flex justify-center items-center pt-2 pb-5">
           <a
