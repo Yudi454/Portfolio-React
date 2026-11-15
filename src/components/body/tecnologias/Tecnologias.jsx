@@ -35,16 +35,14 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
     const data1 = experiencias
       .filter((e) => e.tecnologias.some((t) => t === seleccionado?.nombre))
       .map((e) => ({
-        nombre: e.nombre,
+        ...e,
         tipo: "experiencia",
-        rareza: e.rareza,
       }));
     const data2 = proyectos
       .filter((p) => p.tecnologias.some((t) => t === seleccionado?.nombre))
       .map((e) => ({
-        nombre: e.nombre,
+        ...e,
         tipo: "proyectos",
-        rareza: e.rareza,
       }));
 
     const result = [...data1, ...data2];
@@ -170,7 +168,7 @@ export const Tecnologias = ({ setTrabajoSeleccionado }) => {
                         rareza={tr.rareza}
                         key={i}
                         onClick={() => {
-                          setTrabajoSeleccionado(t),
+                          setTrabajoSeleccionado(tr),
                             document
                               .getElementById("tecnologias")
                               ?.scrollIntoView({ behavior: "smooth" });

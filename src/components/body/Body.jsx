@@ -8,7 +8,7 @@ import { Trayectoria } from "./trayectoria/Trayectoria";
 import { Tecnologias } from "./tecnologias/Tecnologias";
 
 export const Body = () => {
-  const { tema} = useStore();
+  const { tema } = useStore();
 
   const [trabajoSeleccionado, setTrabajoSeleccionado] = useState();
 
